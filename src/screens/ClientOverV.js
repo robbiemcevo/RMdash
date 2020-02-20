@@ -41,13 +41,10 @@ export default class TabsExample extends Component {
           <Right />
         </Header>
 
-        <Tabs style={{tabColor: '#103662' }}>
-          <Tab
-            heading="Overview"
-            activeTextStyle={{color: '#103662'}}
-            activeTabUnderlineStyle={{color: '#103662'}}>
+        <Tabs tabBarUnderlineStyle={{backgroundColor: '#103662', height: 4}}>
+          <Tab heading="Overview" activeTextStyle={{color: '#103662'}}>
             <Content padder>
-              <Card transparent>
+              <Card>
                 <CardItem>
                   <Body>
                     <Text>Address</Text>
@@ -55,11 +52,33 @@ export default class TabsExample extends Component {
                   </Body>
                 </CardItem>
               </Card>
+              <Card transparent>
+                <CardItem>
+                  <Body>
+                    <Text>Total Net Assets</Text>
+                    <Text>GDP</Text>
+                    <Text style={{fontSize: 90, fontWeight: 'bold', color: '#103662'}}>55 
+                    <Text style={{fontWeight: 'normal'}}>  Million
+                    </Text>
+                    </Text>
+                  </Body>
+                </CardItem>
+              </Card>
+              <Card transparent>
+                <CardItem style={{backgroundColor: '#B2C3D1'}}>
+                  <Body>
+                    <Text>Next meeting: 
+                    </Text>
+                    <Text>Notifications:</Text>
+                  </Body>
+                </CardItem>
+              </Card>
             </Content>
+            
           </Tab>
-          <Tab heading="Portfolio" />
-          <Tab heading="Insights" />
-          <Tab heading="Documents" />
+          <Tab heading="Portfolio" activeTextStyle={{color: '#103662'}} />
+          <Tab heading="Insights" activeTextStyle={{color: '#103662'}} />
+          <Tab heading="Documents" activeTextStyle={{color: '#103662'}} />
         </Tabs>
       </Container>
     );
