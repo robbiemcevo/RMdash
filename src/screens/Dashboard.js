@@ -107,7 +107,6 @@ export default class UpcomingEvents extends Component {
             }}
             block
             onPress={() => this.props.navigation.replace('ClientOverV')}>
-         >
            <Text>Client list</Text>
          </Button>
         </Content>

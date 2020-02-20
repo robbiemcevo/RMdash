@@ -32,6 +32,7 @@ export default class TabsExample extends Component {
           <Body>
             <Title
               style={{
+                fontSize: 20,
                 marginTop: -30,
                 color: 'white',
               }}>
@@ -42,21 +43,45 @@ export default class TabsExample extends Component {
         </Header>
 
         <Tabs tabBarUnderlineStyle={{backgroundColor: '#103662', height: 4}}>
-          <Tab heading="Overview" activeTextStyle={{color: '#103662'}}>
+          <Tab heading="Overview" activeTextStyle={{color: '#103662'}} >
             <Content padder>
-              <Card>
+            <Card transparent>
+                <CardItem>
+                  <Button transparent style={{marginLeft: 10}}>
+                    <Text
+                      style={{
+                        color: '#103662',
+                        fontSize: 20,
+                        textAlign: 'center',
+                      }}>
+                      <Icon name="call" style={{color: '#103662'}} /> {' '}Call
+                    </Text>
+                  </Button>
+                  <Button transparent style={{marginLeft: 90}}>
+                    <Text
+                      style={{
+                        color: '#103662',
+                        fontSize: 20,
+                        textAlign: 'center',
+                      }}>
+                      <Icon name="text" style={{color: '#103662'}} /> {' '}Message
+                    </Text>
+                  </Button>
+                </CardItem>
+              </Card>
+              <Card transparent>
                 <CardItem>
                   <Body>
-                    <Text>Address</Text>
-                    <Text>Phone No.</Text>
+                    <Text style={{fontSize: 20}}>Address:</Text>
+                    <Text style={{fontSize: 20}}>Phone No.</Text>
                   </Body>
                 </CardItem>
               </Card>
               <Card transparent>
                 <CardItem>
                   <Body>
-                    <Text>Total Net Assets</Text>
-                    <Text>GDP</Text>
+                    <Text style={{fontSize: 20}}>Total Net Assets</Text>
+                    <Text style={{fontSize: 20}}>GDP</Text>
                     <Text
                       style={{
                         fontSize: 90,
@@ -64,7 +89,10 @@ export default class TabsExample extends Component {
                         color: '#103662',
                       }}>
                       55
-                      <Text style={{fontWeight: 'normal'}}> Million</Text>
+                      <Text style={{fontSize: 20,fontWeight: 'normal', color: '#103662'}}>
+                        {' '}
+                        Million
+                      </Text>
                     </Text>
                   </Body>
                 </CardItem>
@@ -72,8 +100,8 @@ export default class TabsExample extends Component {
               <Card transparent>
                 <CardItem style={{backgroundColor: '#B2C3D1'}}>
                   <Body>
-                    <Text>Next meeting:</Text>
-                    <Text>Notifications:</Text>
+                    <Text style={{fontSize: 20}}>Next meeting: {'\n'}</Text>
+                    <Text style={{fontSize: 20}}>Notifications:{'\n'}</Text>
                   </Body>
                 </CardItem>
               </Card>
