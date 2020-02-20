@@ -57,9 +57,14 @@ export default class TabsExample extends Component {
                   <Body>
                     <Text>Total Net Assets</Text>
                     <Text>GDP</Text>
-                    <Text style={{fontSize: 90, fontWeight: 'bold', color: '#103662'}}>55 
-                    <Text style={{fontWeight: 'normal'}}>  Million
-                    </Text>
+                    <Text
+                      style={{
+                        fontSize: 90,
+                        fontWeight: 'bold',
+                        color: '#103662',
+                      }}>
+                      55
+                      <Text style={{fontWeight: 'normal'}}> Million</Text>
                     </Text>
                   </Body>
                 </CardItem>
@@ -67,14 +72,12 @@ export default class TabsExample extends Component {
               <Card transparent>
                 <CardItem style={{backgroundColor: '#B2C3D1'}}>
                   <Body>
-                    <Text>Next meeting: 
-                    </Text>
+                    <Text>Next meeting:</Text>
                     <Text>Notifications:</Text>
                   </Body>
                 </CardItem>
               </Card>
             </Content>
-            
           </Tab>
           <Tab heading="Portfolio" activeTextStyle={{color: '#103662'}} />
           <Tab heading="Insights" activeTextStyle={{color: '#103662'}} />
