@@ -45,7 +45,7 @@ export default class TabsExample extends Component {
           <Tab
             heading="Overview"
             activeTextStyle={{color: '#103662'}}
-            activeUnderlineStyle={{color: '#103662'}}>
+            activeTabUnderlineStyle={{color: '#103662'}}>
             <Content padder>
               <Card transparent>
                 <CardItem>
