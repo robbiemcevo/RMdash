@@ -1,9 +1,21 @@
-import React, { Component } from 'react';
+/* eslint-disable no-unused-vars */
+/* eslint-disable react-native/no-inline-styles */
+import React, {Component} from 'react';
 
-import { createStackNavigator } from '@react-navigation/stack';
+import {createStackNavigator} from '@react-navigation/stack';
 
-import { Container, Header, Content, Form, Item, Input, Label, Button, Text } from 'native-base';
-import { Image } from 'react-native'
+import {
+  Container,
+  Header,
+  Content,
+  Form,
+  Item,
+  Input,
+  Label,
+  Button,
+  Text,
+} from 'native-base';
+import {Image} from 'react-native';
 
 //import AzureAuth from 'react-native-azure-auth';
 //import Client from 'react-native-azure-auth/src/networking';
@@ -13,8 +25,7 @@ import { Image } from 'react-native'
 });*/
 
 export default class Login extends Component {
- 
-    /*_onLogin = async () => {
+  /*_onLogin = async () => {
         try {
           let tokens = await azureAuth.webAuth.authorize({scope: 'openid profile User.Read' })
           console.log('CRED>>>', tokens)
@@ -28,12 +39,22 @@ export default class Login extends Component {
       };*/
 
   render() {
-    
     return (
       <Container>
-        <Content contentContainerStyle={{justifyContent: 'center', flex: 1, marginLeft: 10, marginRight: 10}}>
-   <Image source = {{url:'http://logok.org/wp-content/uploads/2014/10/Credit-Suisse-Logo-and-Wordmark.png'}}
-   style = {{ width: 400, height: 100, marginLeft: 1}}></Image>
+        <Content
+          contentContainerStyle={{
+            justifyContent: 'center',
+            flex: 1,
+            marginLeft: 10,
+            marginRight: 10,
+          }}>
+          <Image
+            source={{
+              url:
+                'http://logok.org/wp-content/uploads/2014/10/Credit-Suisse-Logo-and-Wordmark.png',
+            }}
+            style={{width: 400, height: 100, marginLeft: 1}}
+          />
           <Form>
             <Item inlineLabel>
               <Label>Username</Label>
@@ -44,15 +65,23 @@ export default class Login extends Component {
               <Input />
             </Item>
           </Form>
-         <Button 
-         style= {{backgroundColor: '#103662', marginTop: 30, marginLeft: 40, width: 300, height: 50}} block
-         onPress={() => this.props.navigation.replace('Dashboard')}
-         /*onPress={this._onLogin}*/>
-           <Text>Login</Text>
-         </Button>
-         </Content>
+          <Button
+            style={{
+              backgroundColor: '#103662',
+              marginTop: 30,
+              marginLeft: 40,
+              width: 300,
+              height: 50,
+            }}
+            block
+            onPress={() =>
+              this.props.navigation.replace('Dashboard')
+            } /*onPress={this._onLogin}*/
+          >
+            <Text>Login</Text>
+          </Button>
+        </Content>
       </Container>
-
     );
   }
 }

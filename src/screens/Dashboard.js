@@ -97,6 +97,12 @@ export default class UpcomingEvents extends Component {
                 borderBottomRightRadius: 8,
               }}></CardItem>
           </Card>
+          <Button 
+         style= {{backgroundColor: '#103662', marginTop: 30, marginLeft: 40, width: 300, height: 50}} block
+         onPress={() => this.props.navigation.replace('ClientOverV')}
+         >
+           <Text>Client list</Text>
+         </Button>
         </Content>
       </Container>
     );
