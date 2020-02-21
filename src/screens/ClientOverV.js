@@ -17,9 +17,28 @@ import {
   Title,
   Thumbnail,
   Right,
+  Item,
+  Input,
+  Form,
+  Textarea,
+  DatePicker,
+  ListItem,
+  CheckBox,
+  Picker,
 } from 'native-base';
 
-export default class TabsExample extends Component {
+export default class PickerExample extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selected: 'key1',
+    };
+  }
+  onValueChange(value: string) {
+    this.setState({
+      selected: value,
+    });
+  }
   render() {
     return (
       <Container>
@@ -43,9 +62,9 @@ export default class TabsExample extends Component {
         </Header>
 
         <Tabs tabBarUnderlineStyle={{backgroundColor: '#103662', height: 4}}>
-          <Tab heading="Overview" activeTextStyle={{color: '#103662'}} >
+          <Tab heading="Overview" activeTextStyle={{color: '#103662'}}>
             <Content padder>
-            <Card transparent>
+              <Card transparent>
                 <CardItem>
                   <Button transparent style={{marginLeft: 10}}>
                     <Text
@@ -54,7 +73,7 @@ export default class TabsExample extends Component {
                         fontSize: 20,
                         textAlign: 'center',
                       }}>
-                      <Icon name="call" style={{color: '#103662'}} /> {' '}Call
+                      <Icon name="call" style={{color: '#103662'}} /> Call
                     </Text>
                   </Button>
                   <Button transparent style={{marginLeft: 90}}>
@@ -64,7 +83,7 @@ export default class TabsExample extends Component {
                         fontSize: 20,
                         textAlign: 'center',
                       }}>
-                      <Icon name="text" style={{color: '#103662'}} /> {' '}Message
+                      <Icon name="text" style={{color: '#103662'}} /> Message
                     </Text>
                   </Button>
                 </CardItem>
@@ -89,7 +108,12 @@ export default class TabsExample extends Component {
                         color: '#103662',
                       }}>
                       55
-                      <Text style={{fontSize: 20,fontWeight: 'normal', color: '#103662'}}>
+                      <Text
+                        style={{
+                          fontSize: 20,
+                          fontWeight: 'normal',
+                          color: '#103662',
+                        }}>
                         {' '}
                         Million
                       </Text>
@@ -109,7 +133,106 @@ export default class TabsExample extends Component {
           </Tab>
           <Tab heading="Portfolio" activeTextStyle={{color: '#103662'}} />
           <Tab heading="Insights" activeTextStyle={{color: '#103662'}} />
-          <Tab heading="Documents" activeTextStyle={{color: '#103662'}} />
+          <Tab heading="Documents" activeTextStyle={{color: '#103662'}}>
+            <Content padder>
+              <Text />
+              <Item regular>
+                <Input placeholder="Client ID" style={{fontSize: 20}} />
+              </Item>
+              <Item regular style={{marginTop: 10}}>
+                <Input placeholder="First Name " style={{fontSize: 20}} />
+              </Item>
+              <Item regular style={{marginTop: 10}}>
+                <Input placeholder="Last Name " style={{fontSize: 20}} />
+              </Item>
+              <Form style={{marginTop: 10, fontSize: 20}}>
+                <Textarea
+                  rowSpan={3}
+                  bordered
+                  placeholder="Residential Address"
+                  style={{fontSize: 20}}
+                />
+              </Form>
+              <Item regular style={{marginTop: 10}}>
+                <Input placeholder="Date of Birth" style={{fontSize: 20}} />
+              </Item>
+              <Item regular style={{marginTop: 10}}>
+                <Input placeholder="Mailing Adress" style={{fontSize: 20}} />
+              </Item>
+              <Item regular style={{marginTop: 10}}>
+                <Input
+                  placeholder="Transit Account Holder"
+                  style={{fontSize: 20}}
+                />
+              </Item>
+              <Item regular style={{marginTop: 10}}>
+                <Input
+                  placeholder="Transit Account Number"
+                  style={{fontSize: 20}}
+                />
+              </Item>
+              <Item regular style={{marginTop: 10}}>
+                <Input
+                  placeholder="Source of Wealth"
+                  style={{fontSize: 20}}
+                />
+              </Item>
+              <Text style={{marginTop: 10}}>Client Knowledge</Text>
+              <Form>
+                <Picker
+                  note
+                  mode="dropdown"
+                  style={{width: 300, color: 'black'}}
+                  selectedValue={this.state.selected}
+                  onValueChange={this.onValueChange.bind(this)}>
+                  <Picker.Item label="Please Select" value="key1"/>
+                  <Picker.Item label="Professional" value="key0" />
+                  <Picker.Item label="Private" value="key2" />
+                </Picker>
+              </Form>
+              <Text style={{marginTop: 10}}>PEP Check</Text>
+              <Form>
+                <Picker
+                  note
+                  mode="dropdown"
+                  style={{width: 300, color: 'black'}}
+                  selectedValue={this.state.selected}
+                  onValueChange={this.onValueChange.bind(this)}>
+                  <Picker.Item label="Please Select" value="key1"/>
+                  <Picker.Item label="Clear" value="key0" />
+                  <Picker.Item label="In Progress" value="key2" />
+                  <Picker.Item label="Not Done" value="key3" />
+                  <Picker.Item label="Problematic" value="key4" />
+                </Picker>
+              </Form>
+              <Text style={{marginTop: 10}}> Government Documents?</Text>
+              <ListItem>
+                <CheckBox checked={false} /*this needs functionality*/ />
+                <Body>
+                  <Text>Yes</Text>
+                </Body>
+              </ListItem>
+              <ListItem>
+                <CheckBox checked={false} /*this needs functionality*/ />
+                <Body>
+                  <Text>No</Text>
+                </Body>
+              </ListItem>
+              <Text style={{marginTop: 10}}> Paper Mailing?</Text>
+              <ListItem>
+                <CheckBox checked={false} /*this needs functionality*/ />
+                <Body>
+                  <Text>Yes</Text>
+                </Body>
+              </ListItem>
+              <ListItem>
+                <CheckBox checked={false} /*this needs functionality*/ />
+                <Body>
+                  <Text>No</Text>
+                </Body>
+              </ListItem>
+            </Content>
+          </Tab>
         </Tabs>
       </Container>
     );
