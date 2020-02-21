@@ -172,10 +172,7 @@ export default class PickerExample extends Component {
                 />
               </Item>
               <Item regular style={{marginTop: 10}}>
-                <Input
-                  placeholder="Source of Wealth"
-                  style={{fontSize: 20}}
-                />
+                <Input placeholder="Source of Wealth" style={{fontSize: 20}} />
               </Item>
               <Text style={{marginTop: 10}}>Client Knowledge</Text>
               <Form>
@@ -185,7 +182,7 @@ export default class PickerExample extends Component {
                   style={{width: 300, color: 'black'}}
                   selectedValue={this.state.selected}
                   onValueChange={this.onValueChange.bind(this)}>
-                  <Picker.Item label="Please Select" value="key1"/>
+                  <Picker.Item label="Please Select" value="key1" />
                   <Picker.Item label="Professional" value="key0" />
                   <Picker.Item label="Private" value="key2" />
                 </Picker>
@@ -198,7 +195,7 @@ export default class PickerExample extends Component {
                   style={{width: 300, color: 'black'}}
                   selectedValue={this.state.selected}
                   onValueChange={this.onValueChange.bind(this)}>
-                  <Picker.Item label="Please Select" value="key1"/>
+                  <Picker.Item label="Please Select" value="key1" />
                   <Picker.Item label="Clear" value="key0" />
                   <Picker.Item label="In Progress" value="key2" />
                   <Picker.Item label="Not Done" value="key3" />
