@@ -1,4 +1,4 @@
-package com.rmdash;
+package com.creditsuisse.rmdash;
 
 import com.facebook.react.ReactActivity;
 

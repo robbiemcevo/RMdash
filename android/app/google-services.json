@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "764913122919",
+    "firebase_url": "https://csrmdash.firebaseio.com",
+    "project_id": "csrmdash",
+    "storage_bucket": "csrmdash.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:764913122919:android:4e4983e5c913fbcbbc5ec2",
+        "android_client_info": {
+          "package_name": "com.creditsuisse.rmdash"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "764913122919-1vqn6n00asurgd5mh4766m5ul2fg5sgq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.creditsuisse.rmdash",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "764913122919-i2dnadbucuevhn1347sti0pm6tbvns05.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDq3UVewQbKpQiY-5n_7ellH3KpNe1bVnI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "764913122919-i2dnadbucuevhn1347sti0pm6tbvns05.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "764913122919-im5uh7ql46o99aqs5um26nbn18fuah8k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.creditsuisse.rmdash"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

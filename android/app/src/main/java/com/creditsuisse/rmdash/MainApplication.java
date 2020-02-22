@@ -1,4 +1,4 @@
-package com.rmdash;
+package com.creditsuisse.rmdash;
 
 import android.app.Application;
 import android.content.Context;
