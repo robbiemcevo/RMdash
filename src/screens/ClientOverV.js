@@ -25,6 +25,7 @@ import {
   ListItem,
   CheckBox,
   Picker,
+  Segment,
 } from 'native-base';
 
 export default class PickerExample extends Component {
@@ -131,7 +132,15 @@ export default class PickerExample extends Component {
               </Card>
             </Content>
           </Tab>
-          <Tab heading="Portfolio" activeTextStyle={{color: '#103662'}} />
+          <Tab heading="Portfolio" activeTextStyle={{color: '#103662'}}>
+            <Content>
+              <Tabs
+                tabBarUnderlineStyle={{backgroundColor: '#103662', height: 4}}>
+                <Tab heading="Execution Only" activeTextStyle={{color: '#103662'}} />
+                <Tab heading="Advisory" activeTextStyle={{color: '#103662'}} />
+              </Tabs>
+            </Content>
+          </Tab>
           <Tab heading="Insights" activeTextStyle={{color: '#103662'}} />
           <Tab heading="Documents" activeTextStyle={{color: '#103662'}}>
             <Content padder>
