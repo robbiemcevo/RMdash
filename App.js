@@ -10,8 +10,9 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Login from './src/screens/Login';
 import Dashboard from './src/screens/Dashboard';
 import ClientOverV from './src/screens/ClientOverV';
+
 import { startClock } from 'react-native-reanimated';
-import Test from './src/screens/Test';
+
 
 const Stack = createStackNavigator();
 
@@ -23,7 +24,7 @@ export default class App extends Component {
         <Stack.Screen name="Dashboard" component={Dashboard} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="ClientOverV" component={ClientOverV} />
-        <Stack.Screen name="Test" component={Test} />
+        
 
       </Stack.Navigator>
       </NavigationContainer>

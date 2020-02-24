@@ -118,7 +118,7 @@ export default class UpcomingEvents extends Component {
               height: 50,
             }}
             block 
-            onPress={() => this.props.navigation.replace('Test')}>
+            onPress={() => this.props.navigation.replace('Testpage')}>
            <Text>Client list</Text>
          </Button>
         </Content>
