@@ -72,7 +72,7 @@ export default class PickerExample extends Component {
               Ali Owrak
             </Title>
           </Body>
-          <Right />
+          <Right/>
         </Header>
 
         <Tabs tabBarUnderlineStyle={{backgroundColor: '#103662', height: 4}}>

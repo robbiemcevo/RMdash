@@ -109,6 +109,18 @@ export default class UpcomingEvents extends Component {
             onPress={() => this.props.navigation.replace('ClientOverV')}>
            <Text>Client list</Text>
          </Button>
+         <Button 
+            style={{
+              backgroundColor: '#103662',
+              marginTop: 30,
+              marginLeft: 40,
+              width: 300,
+              height: 50,
+            }}
+            block 
+            onPress={() => this.props.navigation.replace('Test')}>
+           <Text>Client list</Text>
+         </Button>
         </Content>
       </Container>
     );
