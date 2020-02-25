@@ -69,7 +69,8 @@ export default class UpcomingEvents extends Component {
               style={{
                 borderBottomLeftRadius: 8,
                 borderBottomRightRadius: 8,
-              }}></CardItem>
+              }}
+            />
           </Card>
           <Card style={{borderRadius: 8}}>
             <CardItem
@@ -95,9 +96,10 @@ export default class UpcomingEvents extends Component {
               style={{
                 borderBottomLeftRadius: 8,
                 borderBottomRightRadius: 8,
-              }}></CardItem>
+              }}
+            />
           </Card>
-          <Button 
+          <Button
             style={{
               backgroundColor: '#103662',
               marginTop: 30,
@@ -107,9 +109,9 @@ export default class UpcomingEvents extends Component {
             }}
             block
             onPress={() => this.props.navigation.replace('ClientOverV')}>
-           <Text>Client list</Text>
-         </Button>
-         <Button 
+            <Text>Client list</Text>
+          </Button>
+          <Button
             style={{
               backgroundColor: '#103662',
               marginTop: 30,
@@ -117,10 +119,10 @@ export default class UpcomingEvents extends Component {
               width: 300,
               height: 50,
             }}
-            block 
+            block
             onPress={() => this.props.navigation.replace('Testpage')}>
-           <Text>Client list</Text>
-         </Button>
+            <Text>Client list</Text>
+          </Button>
         </Content>
       </Container>
     );

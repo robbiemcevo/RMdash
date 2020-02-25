@@ -28,7 +28,6 @@ import {
   Segment,
 } from 'native-base';
 
-
 export default class PickerExample extends Component {
   constructor(props) {
     super(props);
@@ -41,8 +40,6 @@ export default class PickerExample extends Component {
       selected: value,
     });
   }
-
-
 
   render() {
     const line = {
@@ -72,7 +69,7 @@ export default class PickerExample extends Component {
               Ali Owrak
             </Title>
           </Body>
-          <Right/>
+          <Right />
         </Header>
 
         <Tabs tabBarUnderlineStyle={{backgroundColor: '#103662', height: 4}}>
@@ -161,7 +158,7 @@ export default class PickerExample extends Component {
                             fontWeight: 'bold',
                             color: '#103662',
                           }}>
-                          Portfolio Overview 
+                          Portfolio Overview
                         </Text>
                       </CardItem>
                     </Card>
@@ -173,14 +170,14 @@ export default class PickerExample extends Component {
                             fontWeight: 'bold',
                             color: '#103662',
                           }}>
-                          Securities 
+                          Securities
                         </Text>
                       </CardItem>
                     </Card>
                   </Content>
                 </Tab>
                 <Tab heading="Advisory" activeTextStyle={{color: '#103662'}}>
-                <Content>
+                  <Content>
                     <Card transparent style={{height: 200}}>
                       <CardItem>
                         <Text
@@ -189,7 +186,7 @@ export default class PickerExample extends Component {
                             fontWeight: 'bold',
                             color: '#103662',
                           }}>
-                          Portfolio Overview 
+                          Portfolio Overview
                         </Text>
                       </CardItem>
                     </Card>
@@ -213,7 +210,7 @@ export default class PickerExample extends Component {
                             fontWeight: 'bold',
                             color: '#103662',
                           }}>
-                          Securities Watchlist 
+                          Securities Watchlist
                         </Text>
                       </CardItem>
                     </Card>
