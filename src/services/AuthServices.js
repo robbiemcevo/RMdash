@@ -43,3 +43,14 @@ export async function confirmPhoneVerificationCode(confirmation, code, that) {
 
 }
 
+export async function onLogOut(that) {    
+
+  try {
+    await auth().signOut(that);
+    that.props.navigation.replace('Login');
+  } catch (e) {
+    console.log(e);
+  }
+
+}
+

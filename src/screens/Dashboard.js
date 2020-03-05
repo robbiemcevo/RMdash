@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Image, StatusBar} from 'react-native';
+
 import {
   Container,
   Header,
@@ -15,7 +16,30 @@ import {
   Thumbnail,
   Right,
 } from 'native-base';
+
+import '@react-native-firebase/functions';
+import firebase from '@react-native-firebase/app';
+import { onLogOut } from '../services/AuthServices';
+
+async function order() {
+  try {
+    const success = await firebase.functions().httpsCallable('getClientsList')({});
+ 
+    if (success) {
+      console.log('Pizza is on the way!');
+      console.log(success);
+    } else {
+      console.warn('Woops, looks like something went wrong!');
+    }
+  } catch (e) {
+    console.error(e);
+  }
+}
+
 export default class UpcomingEvents extends Component {
+  componentDidMount() {
+    order();
+  }
   render() {
     return (
       <Container>
@@ -108,6 +132,20 @@ export default class UpcomingEvents extends Component {
             block
             onPress={() => this.props.navigation.replace('ClientOverV')}>
            <Text>Client list</Text>
+         </Button>
+         <Button 
+            style={{
+              backgroundColor: '#103662',
+              marginTop: 30,
+              marginLeft: 40,
+              width: 300,
+              height: 50,
+            }}
+            block
+            onPress={() => 
+              onLogOut(this)
+            }>
+           <Text>Log Out</Text>
          </Button>
         </Content>
       </Container>

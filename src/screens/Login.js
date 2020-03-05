@@ -18,32 +18,11 @@ import {
 import {Image} from 'react-native';
 
 import { onLogin } from '../services/AuthServices';
-import firebase from '@react-native-firebase/app';
-import '@react-native-firebase/functions';
 import '@react-native-firebase/auth';
-
-async function order() {
-  try {
-    const success = await firebase.functions().httpsCallable('getClientsList')({});
- 
-    if (success) {
-      console.log('Pizza is on the way!');
-      console.log(success);
-    } else {
-      console.warn('Woops, looks like something went wrong!');
-    }
-  } catch (e) {
-    console.error(e);
-  }
-}
 
 export default class Login extends Component {
 
   state = { email: '', password: '', errorMsg: '' };
-
-  componentDidMount() {
-    order();
-  }
 
   render() {
 
