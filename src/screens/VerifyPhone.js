@@ -2,8 +2,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
 
-import {createStackNavigator} from '@react-navigation/stack';
-
 import {
   Container,
   Header,
@@ -17,37 +15,20 @@ import {
 } from 'native-base';
 import {Image} from 'react-native';
 
-import { onLogin } from '../services/AuthServices';
-import firebase from '@react-native-firebase/app';
-import '@react-native-firebase/functions';
-import '@react-native-firebase/auth';
+import { sendPhoneVerificationCode, confirmPhoneVerificationCode } from '../services/AuthServices';
 
-async function order() {
-  try {
-    const success = await firebase.functions().httpsCallable('getClientsList')({});
- 
-    if (success) {
-      console.log('Pizza is on the way!');
-      console.log(success);
-    } else {
-      console.warn('Woops, looks like something went wrong!');
-    }
-  } catch (e) {
-    console.error(e);
-  }
-}
+export default class VerifyPhone extends Component {
 
-export default class Login extends Component {
+  state = { code: '', errorMsg: '' };
 
-  state = { email: '', password: '', errorMsg: '' };
-
-  componentDidMount() {
-    order();
+  async componentDidMount() {
+    this.confirmation = await sendPhoneVerificationCode();
   }
 
   render() {
 
-    const {email, password, errorMsg} = this.state;
+    const phoneNum = '+447774619431';
+    const {code, errorMsg} = this.state;
     
     return (
       <Container>
@@ -65,16 +46,12 @@ export default class Login extends Component {
             }}
             style={{width: 400, height: 100, marginLeft: 1}}
           />
+          <Text>To complete authentification process please enter the code that was sent to {phoneNum}.</Text>
           <Form>
             {errorMsg ? <Text style={{color: '#d9534f', textAlign: 'center'}}>{errorMsg}</Text> : <Text />}
             <Item error={errorMsg ? true : false} inlineLabel>
-              <Label style={errorMsg ? {color: '#d9534f'} : {}}>Email</Label>
-              <Input keyboardType={'email-address'}
-              value={ this.state.email } onChangeText={(email) => this.setState({email})}/>
-            </Item>
-            <Item error={errorMsg ? true : false} inlineLabel>
-              <Label style={errorMsg ? {color: '#d9534f'} : {}}>Password</Label>
-              <Input secureTextEntry={true} onChangeText={(password) => this.setState({password})} />
+              <Label style={errorMsg ? {color: '#d9534f'} : {}}>Confirmation code</Label>
+              <Input onChangeText={(code) => this.setState({code})} />
             </Item>
           </Form>
           <Button
@@ -90,10 +67,10 @@ export default class Login extends Component {
              this.props.navigation.replace('Dashboard')
             }*/
             onPress={() => 
-              onLogin(email, password, this)
+              confirmPhoneVerificationCode(this.confirmation, code, this) 
             }
           >
-            <Text>Login</Text>
+            <Text>Confirm</Text>
           </Button>
         </Content>
       </Container>

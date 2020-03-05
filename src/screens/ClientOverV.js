@@ -35,7 +35,7 @@ export default class PickerExample extends Component {
       selected: 'key1',
     };
   }
-  onValueChange(value: string) {
+  onValueChange(value) {
     this.setState({
       selected: value,
     });
