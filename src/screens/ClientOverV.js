@@ -36,7 +36,9 @@ export default class ClientOverV extends Component {
     super(props);
     this.state = {
       selected: 'key1',
+      clientData2: '',
     };
+
   }
   onValueChange(value: string) {
     this.setState({
@@ -45,8 +47,9 @@ export default class ClientOverV extends Component {
   }
   
   componentDidMount() {
-    this.clientData = getClientData();
-    //this.setState({clientData: clientData});
+    let clientData = getClientData();
+    console.log('clientData' + clientData[1].name);
+    this.setState({clientData2: clientData});
   }
   render()
   
