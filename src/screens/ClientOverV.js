@@ -29,6 +29,7 @@ import {
   bordered,
 } from 'native-base';
 import CSHeader from '../components/CSHeader';
+import {GetClientData} from '../services/DatabaseServices';
 
 export default class ClientOverV extends Component {
   constructor(props) {
@@ -42,7 +43,9 @@ export default class ClientOverV extends Component {
       selected: value,
     });
   }
-
+  componentDidMount() {
+    GetClientData();
+  }
   render()
   
   {
