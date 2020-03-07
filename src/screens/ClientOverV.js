@@ -29,7 +29,7 @@ import {
   bordered,
 } from 'native-base';
 import CSHeader from '../components/CSHeader';
-import {GetClientData} from '../services/DatabaseServices';
+import {getClientData} from '../services/DatabaseServices';
 
 export default class ClientOverV extends Component {
   constructor(props) {
@@ -43,8 +43,10 @@ export default class ClientOverV extends Component {
       selected: value,
     });
   }
+  
   componentDidMount() {
-    GetClientData();
+    this.clientData = getClientData();
+    //this.setState({clientData: clientData});
   }
   render()
   
@@ -58,7 +60,7 @@ export default class ClientOverV extends Component {
         },
       ],
     };
-    const pageTitle= 'Ali Owrak'
+    const pageTitle = 'Ali Orwak'
     return (
       <Container>
        <CSHeader pageTitle={pageTitle}/>
@@ -93,7 +95,7 @@ export default class ClientOverV extends Component {
               <Card transparent>
                 <CardItem>
                   <Body>
-                  <Text style={{fontSize: 20}}>Client ID: </Text>
+                  <Text style={{fontSize: 20}}>Client ID:  </Text>
                     <Text style={{fontSize: 20}}>Address:</Text>
                     <Text style={{fontSize: 20}}>Phone No.</Text>
                   </Body>
