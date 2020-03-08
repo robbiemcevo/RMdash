@@ -94,7 +94,7 @@ export default class ClientOverV extends Component {
                 <CardItem>
                   <Body>
                     <Text style={{fontSize: 20}}>
-                      Client ID: 
+                      Client ID: {}
                     </Text>
                     <Text style={{fontSize: 20}}>Address:</Text>
                     <Text style={{fontSize: 20}}>Phone No.</Text>
@@ -141,7 +141,7 @@ export default class ClientOverV extends Component {
                       fontWeight: 'bold',
                       color: '#103662',
                     }}>
-                    NOTIFICATIONS
+                    Notifications
                   </Text>
                 </CardItem>
                 <CardItem>
