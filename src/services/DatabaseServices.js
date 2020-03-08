@@ -3,9 +3,9 @@ import firebase from '@react-native-firebase/app';
 
 export async function getClientData() {
   try {
-    const success = await firebase
-      .functions()
-      .httpsCallable('getClientsList')({});
+    const success = await firebase.functions().httpsCallable('getClientsList')(
+      {},
+    );
 
     if (success) {
       console.log('Pizza is on the way!');
