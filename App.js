@@ -11,7 +11,7 @@ import Dashboard from './src/screens/Dashboard';
 import NewClient from './src/screens/NewClient';
 import ClientList from './src/screens/ClientList';
 import ClientOverV from './src/screens/ClientOverV';
-import VerifyPhone from './src/screens/VerifyPhone';
+import VerifyPhone from './src/screens/VerifyPhone'; 
 
 //const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();

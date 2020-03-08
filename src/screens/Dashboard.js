@@ -16,8 +16,7 @@ import {
   Right,
 } from 'native-base';
 
-import '@react-native-firebase/functions';
-import firebase from '@react-native-firebase/app';
+
 import {onLogOut} from '../services/AuthServices';
 
 import {useNavigation} from '@react-navigation/native';
