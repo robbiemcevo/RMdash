@@ -169,7 +169,20 @@ export default class UpcomingEvents extends Component {
               </Body>
             </CardItem>
           </Card>
-          <Card>
+          <Card transparent style={{borderRadius: 8}}>
+          <CardItem
+              header
+              bordered
+              style={{
+                borderTopLeftRadius: 8,
+                borderTopRightRadius: 8,
+                borderBottomWidth: 1,
+              }}>
+              <Text
+                style={{fontSize: 20, fontWeight: 'bold', color: '#103662'}}>
+                News
+              </Text>
+            </CardItem>
             {items.map(item => (
               <CardItem>
                 <Text key={item.title} />
