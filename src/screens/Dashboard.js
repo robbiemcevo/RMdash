@@ -38,7 +38,7 @@ export default class UpcomingEvents extends Component {
       'https://newsapi.org/v2/top-headlines?' +
       'country=gb&' +
       'category=business&' +
-      'pageSize=5&' +
+      'pageSize=3&' +
       'apiKey=9cb1bba31aa54d038eb01b75da21cd94';
 
     fetch(url)
