@@ -65,9 +65,7 @@ export default class Login extends Component {
               height: 50,
             }}
             block
-            onPress={() =>
-             this.props.navigation.replace('Dashboard')
-            }
+            onPress={() => this.props.navigation.replace('Dashboard')}
             /*onPress={() => 
               onLogin(email, password, this)
             }*/
