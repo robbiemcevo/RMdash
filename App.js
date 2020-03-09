@@ -26,6 +26,7 @@ export default class App extends Component {
           <Drawer.Screen name="New Client" component={NewClient} />
           <Drawer.Screen name="Client List" component={ClientList} />
           <Drawer.Screen name="Client overview" component={ClientOverV} />
+          <Drawer.Screen name="VerifyPhone" component={VerifyPhone} />
         </Drawer.Navigator>
       </NavigationContainer>
       /*
