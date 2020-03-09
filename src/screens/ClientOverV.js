@@ -63,7 +63,7 @@ export default class ClientOverV extends Component {
       <Container>
         <CSHeader pageTitle={pageTitle} />
 
-        <Tabs tabBarUnderlineStyle={{backgroundColor: '#103662', height: 4}}>
+        <Tabs tabBarUnderlineStyle={{backgroundColor: '#103662', height: 4}}  >
           <Tab heading="Overview" activeTextStyle={{color: '#103662'}}>
             <Content padder>
               <Card transparent>
@@ -404,7 +404,7 @@ export default class ClientOverV extends Component {
                 <Picker
                   note
                   mode="dropdown"
-                  style={{width: 300, color: 'blue', fontSize: 20}}
+                  style={{width: 300, color: 'black', fontSize: 20}}
                   selectedValue={this.state.selected}
                   onValueChange={this.onValueChange.bind(this)}>
                   <Picker.Item label="Please Select" value="key1" />
