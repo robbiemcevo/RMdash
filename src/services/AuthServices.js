@@ -10,7 +10,7 @@ export async function onLogin(email, password, that) {
       await auth().signInWithEmailAndPassword(email, password);
       console.log("success");
 
-      that.props.navigation.replace('VerifyPhone');
+      that.props.navigation.navigate('VerifyPhone');
 
     } catch (e) {
       if(e.code == 'auth/invalid-email' || e.code == 'auth/user-not-found' || e.code == 'auth/wrong-password') {
@@ -36,7 +36,7 @@ export async function confirmPhoneVerificationCode(confirmation, code, that) {
   try {
     await confirmation.confirm(code); // User entered code
     // Successful login - onAuthStateChanged is triggered
-    that.props.navigation.replace('Dashboard');
+    that.props.navigation.navigate('Dashboard');
   } catch (e) {
     that.setState({errorMsg: 'The verrification code is incorrect!'});
   }
@@ -47,7 +47,7 @@ export async function onLogOut(that) {
 
   try {
     await auth().signOut(that);
-    that.props.navigation.replace('Login');
+    that.props.navigation.navigate('Login');
   } catch (e) {
     console.log(e);
   }
