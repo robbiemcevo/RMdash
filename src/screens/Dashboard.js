@@ -38,7 +38,7 @@ export default class UpcomingEvents extends Component {
       'https://newsapi.org/v2/top-headlines?' +
       'country=gb&' +
       'category=business&' +
-      'pageSize=3&' +
+      'pageSize=5&' +
       'apiKey=9cb1bba31aa54d038eb01b75da21cd94';
 
     fetch(url)
@@ -169,20 +169,7 @@ export default class UpcomingEvents extends Component {
               </Body>
             </CardItem>
           </Card>
-          <Card transparent style={{borderRadius: 8}}>
-          <CardItem
-              header
-              bordered
-              style={{
-                borderTopLeftRadius: 8,
-                borderTopRightRadius: 8,
-                borderBottomWidth: 1,
-              }}>
-              <Text
-                style={{fontSize: 20, fontWeight: 'bold', color: '#103662'}}>
-                News
-              </Text>
-            </CardItem>
+          <Card>
             {items.map(item => (
               <CardItem>
                 <Text key={item.title} />
