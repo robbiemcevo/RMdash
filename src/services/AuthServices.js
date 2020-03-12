@@ -16,7 +16,7 @@ export async function onLogin(email, password, that) {
 
       console.log(userRegistrationInfo);
 
-      that.props.navigation.replace('VerifyPhone');
+      that.props.navigation.navigate('VerifyPhone');
 
     } catch (e) {
       if(e.code == 'auth/invalid-email' || e.code == 'auth/user-not-found' || e.code == 'auth/wrong-password') {
