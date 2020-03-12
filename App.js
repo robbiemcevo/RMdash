@@ -11,32 +11,36 @@ import Dashboard from './src/screens/Dashboard';
 import NewClient from './src/screens/NewClient';
 import ClientList from './src/screens/ClientList';
 import ClientOverV from './src/screens/ClientOverV';
-import VerifyPhone from './src/screens/VerifyPhone'; 
+import VerifyPhone from './src/screens/VerifyPhone';
+import ChangePassword from './src/screens/ChangePassword'; 
 
-//const Stack = createStackNavigator();
+const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
+
+function DrawerNavigator() {
+  return (
+    <Drawer.Navigator initialRouteName="Dashboard" headerMode="none">
+      <Drawer.Screen name="Dashboard" component={Dashboard} />
+      <Drawer.Screen name="New Client" component={NewClient} />
+      <Drawer.Screen name="Client List" component={ClientList} />
+    </Drawer.Navigator>
+  );
+}
 
 export default class App extends Component {
   render() {
     return (
       <NavigationContainer>
-        <Drawer.Navigator initialRouteName="Dashboard">
-          <Drawer.Screen name="Dashboard" component={Dashboard} />
-          <Drawer.Screen name="Login" component={Login} />
-          <Drawer.Screen name="New Client" component={NewClient} />
-          <Drawer.Screen name="Client List" component={ClientList} />
-          <Drawer.Screen name="Client overview" component={ClientOverV} />
-          <Drawer.Screen name="VerifyPhone" component={VerifyPhone} />
-        </Drawer.Navigator>
+        <Stack.Navigator initialRouteName="MainApp">
+          <Stack.Screen name="Login" component={Login} options={{headerShown: false}}/>
+          <Stack.Screen name="VerifyPhone" component={VerifyPhone} options={{headerShown: false}}/>
+          <Stack.Screen name="ChangePassword" component={ChangePassword} options={{headerShown: false}}/>
+          <Stack.Screen name="MainApp" component={DrawerNavigator} options={{headerShown: false}}/>
+          <Stack.Screen name="ClientOverV" component={ClientOverV} options={
+             ({ route }) => ( { title: route.params.nameSurname, headerShown: true, headerBackTitleVisible: false, 
+            headerStyle: {backgroundColor: '#103662'}, headerTitleStyle: {color: '#FFFFFF'} })}/>
+        </Stack.Navigator>
       </NavigationContainer>
-      /*
-      <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen name="Dashboard" component={Dashboard} />
-        <Stack.Screen name="Login" component={Login} />
-      </Stack.Navigator>
-      </NavigationContainer>
-      */
     );
   }
 };

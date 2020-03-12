@@ -29,6 +29,7 @@ import {
   bordered,
 } from 'native-base';
 import CSHeader from '../components/CSHeader';
+
 import {getClientData} from '../services/DatabaseServices';
 
 export default class ClientOverV extends Component {
@@ -36,18 +37,24 @@ export default class ClientOverV extends Component {
     super(props);
     this.state = {
       selected: 'key1',
-      clientData2: '',
+      clientData: '',
+      isLoading: true,
     };
   }
-  onValueChange(value: string) {
+  onValueChange(value) {
     this.setState({
       selected: value,
     });
   }
 
-  componentDidMount() {
-    getClientData().then(data => this.setSate({clientData2: data}));
+  async componentDidMount() {
+    console.log(this.props.route.params.client_id);
+    let data = await getClientData(this.props.route.params.client_id);
+    this.setState({clientData: data});
+
+    //console.log(this.state.clientData);
   }
+
   render() {
     const line = {
       labels: ['January', 'February', 'March', 'April', 'May', 'June'],
@@ -58,10 +65,9 @@ export default class ClientOverV extends Component {
         },
       ],
     };
-    const pageTitle = 'Ali Orwak';
+
     return (
       <Container>
-        <CSHeader pageTitle={pageTitle} />
 
         <Tabs tabBarUnderlineStyle={{backgroundColor: '#103662', height: 4}}  >
           <Tab heading="Overview" activeTextStyle={{color: '#103662'}}>
@@ -94,10 +100,10 @@ export default class ClientOverV extends Component {
                 <CardItem>
                   <Body>
                     <Text style={{fontSize: 20}}>
-                      Client ID: {}
+                      Client ID: {this.state.clientData.client_id}
                     </Text>
-                    <Text style={{fontSize: 20}}>Address:</Text>
-                    <Text style={{fontSize: 20}}>Phone No.</Text>
+                    <Text style={{fontSize: 20}}>Address: {this.state.clientData.domicile}</Text>
+                    <Text style={{fontSize: 20}}>Phone No.: {this.state.clientData.phone_number}</Text>
                   </Body>
                 </CardItem>
               </Card>
