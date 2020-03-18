@@ -31,7 +31,7 @@ export default class App extends Component {
   render() {
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Login">
+        <Stack.Navigator initialRouteName="MainApp">
           <Stack.Screen name="Login" component={Login} options={{headerShown: false}}/>
           <Stack.Screen name="VerifyPhone" component={VerifyPhone} options={{headerShown: false}}/>
           <Stack.Screen name="ChangePassword" component={ChangePassword} options={{headerShown: false}}/>
