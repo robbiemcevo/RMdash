@@ -38,7 +38,7 @@ export default class Login extends Component {
             marginRight: 10,
           }}>
           <Image
-            source={require('./assets/RMdashlogo.png')
+            source={require('./assets/RMdashlogoDavid.png')
               /*{
               url:
                 'http://logok.org/wp-content/uploads/2014/10/Credit-Suisse-Logo-and-Wordmark.png',
