@@ -38,11 +38,12 @@ export default class Login extends Component {
             marginRight: 10,
           }}>
           <Image
-            source={{
+            source={require('./assets/RMdashlogo.png')
+              /*{
               url:
                 'http://logok.org/wp-content/uploads/2014/10/Credit-Suisse-Logo-and-Wordmark.png',
-            }}
-            style={{width: 400, height: 100, marginLeft: 1}}
+            }*/}
+            style={{width: 350, height: 110, marginLeft: 20}}
           />
           <Form>
             {errorMsg ? <Text style={{color: '#d9534f', textAlign: 'center'}}>{errorMsg}</Text> : <Text />}
