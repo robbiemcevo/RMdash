@@ -70,7 +70,7 @@ export default class Login extends Component {
              this.props.navigation.replace('Dashboard')
             }*/
             onPress={() => 
-              onLogin(email, password, this)
+              onLogin(email, password,this)
             }
           >
             <Text>Login</Text>
