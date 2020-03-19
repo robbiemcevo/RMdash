@@ -289,7 +289,7 @@ export default class ClientOverV extends Component {
                 }}>
                 Basic Information
               </Text>
-              <Text style={{fontSize: 20, marginStart: 15, color: "grey"}}>First Name</Text>
+              <Text style={{fontSize: 20, marginStart: 15, color: "#555555"}}>First Name</Text>
               <Item rounded style={{marginTop: 10}}>
                 <Input
                   style={{fontSize: 20, marginStart: 5}}>
@@ -298,7 +298,7 @@ export default class ClientOverV extends Component {
                   </Text>
                 </Input>
                 </Item>
-              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "grey"}}>Last Name</Text>
+              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Last Name</Text>
               <Item rounded style={{marginTop: 10}}>
                 <Input
                   style={{fontSize: 20, marginStart: 5}}>
@@ -307,13 +307,13 @@ export default class ClientOverV extends Component {
                   </Text>
                 </Input>
               </Item>
-              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "grey"}}>Email</Text>
+              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Email</Text>
               <Item rounded style={{marginTop: 10}}>
                 <Input
                   style={{fontSize: 20, marginStart: 7}}
                 />
               </Item>
-              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "grey"}}>Phone Number</Text>
+              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Phone Number</Text>
               <Item rounded style={{marginTop: 10}}>
                 <Input
                   style={{fontSize: 20, marginStart: 7}}>
