@@ -436,7 +436,7 @@ export default class ClientOverV extends Component {
               </ListItem>
               <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Paper Mailing?</Text>
               <ListItem>
-                <CheckBox style={{borderColor: '#103662'}} checked={false} /*this needs functionality*/ />
+                <CheckBox style={{borderColor: '#103662'}} checked={false} /*this needs functionality and colour correction when ticked*/ />
                 <Body>
                   <Text style={{fontSize: 20}}>Yes</Text>
                 </Body>
@@ -447,6 +447,20 @@ export default class ClientOverV extends Component {
                   <Text style={{fontSize: 20}}>No</Text>
                 </Body>
               </ListItem>
+              <Right>
+          <Button
+            style={{
+              alignSelf: 'center',
+              backgroundColor: '#103662',
+              marginTop: 20,
+              marginLeft:0,
+              width: 150,
+              height: 50,
+            }}>
+            
+          <Text style={{marginLeft:40}}>Save</Text>
+          </Button>
+          </Right>
             </Content>
           </Tab>
         </Tabs>
