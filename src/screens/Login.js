@@ -16,6 +16,7 @@ import {
   Text,
 } from 'native-base';
 import {Image} from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 
 import { onLogin } from '../services/AuthServices';
 import '@react-native-firebase/auth';
@@ -23,6 +24,16 @@ import '@react-native-firebase/auth';
 export default class Login extends Component {
 
   state = { email: '', password: '', errorMsg: '' };
+
+  async componentDidMount() {
+    try {
+      userEmail = await AsyncStorage.getItem('userEmail') || '';
+      this.setState({email: userEmail});
+    } catch (error) {
+      // Error retrieving data
+      console.log(error.message);
+    }
+  }
 
   render() {
 

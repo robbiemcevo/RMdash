@@ -19,9 +19,9 @@ import { changePassword } from '../services/AuthServices';
 
 export default class VerifyPhone extends Component {
 
-  state = { code: '', errorMsg: '' };
+  state = { password1: '', password2: '', errorMsg: '' };
 
-  async componentDidMount() {
+  componentDidMount() {
   }
 
   render() {
@@ -44,16 +44,19 @@ export default class VerifyPhone extends Component {
             }}
             style={{width: 400, height: 100, marginLeft: 1}}
           />
-          <Text>To complete registration process, please create a new password.</Text>
+          <Text>To complete registration process, please create a new password. {"\n\n"}
+          Password has to be be at least 8 characters which contain at least one lowercase letter, 
+          one uppercase letter, one numeric digit, and one special character!
+          </Text>
           <Form>
             {errorMsg ? <Text style={{color: '#d9534f', textAlign: 'center'}}>{errorMsg}</Text> : <Text />}
             <Item error={errorMsg ? true : false} inlineLabel>
               <Label style={errorMsg ? {color: '#d9534f'} : {}}>New Password</Label>
-              <Input secureTextEntry={true} onChangeText={(code) => this.setState({password1})} />
+              <Input secureTextEntry={true} onChangeText={(password1) => this.setState({password1})} />
             </Item>
             <Item error={errorMsg ? true : false} inlineLabel>
               <Label style={errorMsg ? {color: '#d9534f'} : {}}>Repeat Password</Label>
-              <Input secureTextEntry={true} onChangeText={(code) => this.setState({password2})} />
+              <Input secureTextEntry={true} onChangeText={(password2) => this.setState({password2})} />
             </Item>
           </Form>
           <Button
@@ -68,10 +71,10 @@ export default class VerifyPhone extends Component {
             onPress={() =>
              this.props.navigation.replace('MainApp')
             }
-            /*onPress={() => {
+            onPress={() => {
               changePassword(password1, password2, this);
             }
-            }*/
+            }
           >
             <Text>Confirm</Text>
           </Button>
