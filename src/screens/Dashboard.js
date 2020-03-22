@@ -93,17 +93,17 @@ export default class UpcomingEvents extends Component {
                   bordered
                   style={{
                     borderColor: '#103662',
-                    borderStartWidth: 2,
-                    borderEndWidth: 2,
-                    borderTopWidth: 2,
-                    borderBottomWidth: 2,
+                    borderStartWidth: 1.5,
+                    borderEndWidth: 1.5,
+                    borderTopWidth: 1.5,
+                    borderBottomWidth: 1.5
                   }}>
                   <Text
                     style={{
                       fontSize: 20,
                       textAlign: 'center',
                       color: '#103667',
-                      fontWeight: 'bold',
+                      fontWeight: '500'
                     }}>
                     {' '}
                     09 APR
@@ -122,17 +122,17 @@ export default class UpcomingEvents extends Component {
                   bordered
                   style={{
                     borderColor: '#103662',
-                    borderStartWidth: 2,
-                    borderEndWidth: 2,
-                    borderTopWidth: 2,
-                    borderBottomWidth: 2,
+                    borderStartWidth: 1.5,
+                    borderEndWidth: 1.5,
+                    borderTopWidth: 1.5,
+                    borderBottomWidth: 1.5
                   }}>
                   <Text
                     style={{
                       fontSize: 20,
                       textAlign: 'center',
                       color: '#103662',
-                      fontWeight: 'bold',
+                      fontWeight: '500',
                     }}>
                     {' '}
                     10 JUN

@@ -61,36 +61,37 @@ export default class PickerExample extends Component {
             }}>
             Basic Information
           </Text>
-          <Item rounded style={{marginTop: 10}}>
-            <Input
-              placeholder="First Name"
-              style={{fontSize: 20, marginStart: 7}}
-            />
-          </Item>
-          <Item rounded style={{marginTop: 10}}>
-            <Input
-              placeholder="Middle Name"
-              style={{fontSize: 20, marginStart: 7}}
-            />
-          </Item>
-          <Item rounded style={{marginTop: 10}}>
-            <Input
-              placeholder="Last Name"
-              style={{fontSize: 20, marginStart: 7}}
-            />
-          </Item>
-          <Item rounded style={{marginTop: 10}}>
-            <Input
-              placeholder="Email"
-              style={{fontSize: 20, marginStart: 7}}
-            />
-          </Item>
-          <Item rounded style={{marginTop: 10}}>
-            <Input
-              placeholder="Phone Number"
-              style={{fontSize: 20, marginStart: 7}}
-            />
-          </Item>
+          <Text style={{fontSize: 20, marginStart: 15, color: "grey"}}>First Name</Text>
+              <Item rounded style={{marginTop: 10}}>
+                <Input
+                  style={{fontSize: 20, marginStart: 5}}>
+                  <Text style={{fontSize: 20, marginStart: 7}}>
+                  </Text>
+                </Input>
+                </Item>
+              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Last Name</Text>
+              <Item rounded style={{marginTop: 10}}>
+                <Input
+                  style={{fontSize: 20, marginStart: 5}}>
+                  <Text style={{fontSize: 20, marginStart: 7}}>
+                  </Text>
+                </Input>
+              </Item>
+              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Email</Text>
+              <Item rounded style={{marginTop: 10}}>
+                <Input
+                  style={{fontSize: 20, marginStart: 7}}
+                />
+              </Item>
+              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Phone Number</Text>
+              <Item rounded style={{marginTop: 10}}>
+                <Input
+                  style={{fontSize: 20, marginStart: 7}}>
+                    <Text style={{fontSize: 20, marginStart: 7}}>
+                  </Text>
+                </Input>
+              </Item>
+
           <Right>
           <Button
             style={{
