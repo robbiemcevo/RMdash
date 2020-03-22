@@ -22,12 +22,12 @@ export default class VerifyPhone extends Component {
   state = { code: '', errorMsg: '' };
 
   async componentDidMount() {
-    this.confirmation = await sendPhoneVerificationCode();
+    const { userPhoneNumber } = this.props.route.params;
+    this.confirmation = await sendPhoneVerificationCode(userPhoneNumber);
   }
 
   render() {
-
-    const phoneNum = '+447774619431';
+    const phoneNum = this.props.route.params.userPhoneNumber;
     const {code, errorMsg} = this.state;
     
     return (

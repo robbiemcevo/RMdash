@@ -39,14 +39,12 @@ export async function getClientsList() {
 
 export async function getUserRegistrationInfo() {
   try {
-    const success = await firebase.functions().httpsCallable('getClientsList')(
+    const success = await firebase.functions().httpsCallable('getUserRegistrationInfo')(
       {},
     );
 
     if (success) {
-      console.log('user registration info success!');
-      console.log(success.data[0].name);
-      return success.data;
+      return success.data[0];
     } else {
       console.warn('Woops, looks like something went wrong!');
     }

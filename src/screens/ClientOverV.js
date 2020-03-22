@@ -27,6 +27,7 @@ import {
   Picker,
   Segment,
   bordered,
+  Label,
 } from 'native-base';
 import CSHeader from '../components/CSHeader';
 
@@ -68,8 +69,7 @@ export default class ClientOverV extends Component {
 
     return (
       <Container>
-
-        <Tabs tabBarUnderlineStyle={{backgroundColor: '#103662', height: 4}}  >
+        <Tabs tabBarUnderlineStyle={{backgroundColor: '#103662', height: 4}}>
           <Tab heading="Overview" activeTextStyle={{color: '#103662'}}>
             <Content padder>
               <Card transparent>
@@ -102,8 +102,12 @@ export default class ClientOverV extends Component {
                     <Text style={{fontSize: 20}}>
                       Client ID: {this.state.clientData.client_id}
                     </Text>
-                    <Text style={{fontSize: 20}}>Address: {this.state.clientData.domicile}</Text>
-                    <Text style={{fontSize: 20}}>Phone No.: {this.state.clientData.phone_number}</Text>
+                    <Text style={{fontSize: 20}}>
+                      Address: {this.state.clientData.domicile}
+                    </Text>
+                    <Text style={{fontSize: 20}}>
+                      Phone No.: {this.state.clientData.phone_number}
+                    </Text>
                   </Body>
                 </CardItem>
               </Card>
@@ -156,10 +160,10 @@ export default class ClientOverV extends Component {
                       bordered
                       style={{
                         borderColor: '#103662',
-                        borderStartWidth: 2,
-                        borderEndWidth: 2,
-                        borderTopWidth: 2,
-                        borderBottomWidth: 2,
+                        borderStartWidth: 1.5,
+                        borderEndWidth: 1.5,
+                        borderTopWidth: 1.5,
+                        borderBottomWidth: 1.5,
                       }}>
                       <Text
                         style={{
@@ -272,7 +276,7 @@ export default class ClientOverV extends Component {
                   marginTop: 10,
                   marginStart: 15,
                 }}>
-                Client ID:
+                Client ID: {this.state.clientData.client_id}
               </Text>
               <Text
                 style={{
@@ -285,36 +289,40 @@ export default class ClientOverV extends Component {
                 }}>
                 Basic Information
               </Text>
+              <Text style={{fontSize: 20, marginStart: 15, color: "#555555"}}>First Name</Text>
               <Item rounded style={{marginTop: 10}}>
                 <Input
-                  placeholder="First Name"
+                  style={{fontSize: 20, marginStart: 5}}>
+                  <Text style={{fontSize: 20, marginStart: 7}}>
+                    {this.state.clientData.name}
+                  </Text>
+                </Input>
+                </Item>
+              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Last Name</Text>
+              <Item rounded style={{marginTop: 10}}>
+                <Input
+                  style={{fontSize: 20, marginStart: 5}}>
+                  <Text style={{fontSize: 20, marginStart: 7}}>
+                    {this.state.clientData.surname}
+                  </Text>
+                </Input>
+              </Item>
+              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Email</Text>
+              <Item rounded style={{marginTop: 10}}>
+                <Input
                   style={{fontSize: 20, marginStart: 7}}
                 />
               </Item>
+              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Phone Number</Text>
               <Item rounded style={{marginTop: 10}}>
                 <Input
-                  placeholder="Middle Name"
-                  style={{fontSize: 20, marginStart: 7}}
-                />
+                  style={{fontSize: 20, marginStart: 7}}>
+                    <Text style={{fontSize: 20, marginStart: 7}}>
+                    {this.state.clientData.phone_number}
+                  </Text>
+                </Input>
               </Item>
-              <Item rounded style={{marginTop: 10}}>
-                <Input
-                  placeholder="Last Name"
-                  style={{fontSize: 20, marginStart: 7}}
-                />
-              </Item>
-              <Item rounded style={{marginTop: 10}}>
-                <Input
-                  placeholder="Email"
-                  style={{fontSize: 20, marginStart: 7}}
-                />
-              </Item>
-              <Item rounded style={{marginTop: 10}}>
-                <Input
-                  placeholder="Phone Number"
-                  style={{fontSize: 20, marginStart: 7}}
-                />
-              </Item>
+
 
               <Text
                 style={{
@@ -327,75 +335,71 @@ export default class ClientOverV extends Component {
                 }}>
                 Onboarding Information
               </Text>
-
+              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Date of Birth</Text>
               <Item rounded style={{marginTop: 10}}>
                 <Input
-                  placeholder="Date of Birth "
                   style={{fontSize: 20, marginStart: 7}}
                 />
               </Item>
+              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Residential Adress</Text>
               <Item rounded style={{marginTop: 10}}>
                 <Input
-                  placeholder="Residential Address"
                   style={{fontSize: 20, marginStart: 7}}
                 />
               </Item>
+              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Mailing Adress</Text>
               <Item rounded style={{marginTop: 10}}>
                 <Input
-                  placeholder="Mailing Adress"
                   style={{fontSize: 20, marginStart: 7}}
                 />
               </Item>
+              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Nationality</Text>
               <Item rounded style={{marginTop: 10}}>
                 <Input
-                  placeholder="Nationality"
                   style={{fontSize: 20, marginStart: 7}}
                 />
               </Item>
+              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Reporting Language</Text>
               <Item rounded style={{marginTop: 10}}>
                 <Input
-                  placeholder="Reporting Language"
                   style={{fontSize: 20, marginStart: 7}}
                 />
               </Item>
+              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Reporting Currency</Text>
               <Item rounded style={{marginTop: 10}}>
                 <Input
-                  placeholder="Reporting Currency"
                   style={{fontSize: 20, marginStart: 7}}
                 />
               </Item>
+              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Transit Account Holder</Text>
               <Item rounded style={{marginTop: 10}}>
                 <Input
-                  placeholder="Transit Account Holder"
                   style={{fontSize: 20, marginStart: 7}}
                 />
               </Item>
+              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Transit Account Number</Text>
               <Item rounded style={{marginTop: 10}}>
                 <Input
-                  placeholder="Transit Account Number"
                   style={{fontSize: 20, marginStart: 7}}
                 />
               </Item>
+              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Sector</Text>
               <Item rounded style={{marginTop: 10}}>
                 <Input
-                  placeholder="Sector"
                   style={{fontSize: 20, marginStart: 7}}
                 />
               </Item>
+              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Source of Wealth</Text>
               <Item rounded style={{marginTop: 10}}>
                 <Input
-                  placeholder="Source of Wealth"
                   style={{fontSize: 20, marginStart: 7}}
                 />
               </Item>
-              <Text style={{fontSize: 20, marginTop: 10, marginStart: 5}}>
-                Client Knowledge
-              </Text>
-              <Form>
+              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Client Knowledge</Text>
+              <Form >
                 <Picker
-                  note
                   mode="dropdown"
-                  style={{width: 300, color: 'black'}}
+                  style={{width: 300, color: 'black', fontSize:20}}
                   selectedValue={this.state.selected}
                   onValueChange={this.onValueChange.bind(this)}>
                   <Picker.Item label="Please Select" value="key1" />
@@ -403,12 +407,9 @@ export default class ClientOverV extends Component {
                   <Picker.Item label="Private" value="key2" />
                 </Picker>
               </Form>
-              <Text style={{fontSize: 20, marginTop: 10, marginStart: 5}}>
-                PEP Check
-              </Text>
-              <Form>
+              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>PEP Check</Text>
+              <Form Inline style={{inlineColor: 'black'}}>
                 <Picker
-                  note
                   mode="dropdown"
                   style={{width: 300, color: 'black', fontSize: 20}}
                   selectedValue={this.state.selected}
@@ -420,35 +421,46 @@ export default class ClientOverV extends Component {
                   <Picker.Item label="Problematic" value="key4" />
                 </Picker>
               </Form>
-              <Text style={{fontSize: 20, marginTop: 10}}>
-                {' '}
-                Government Documents?
-              </Text>
+              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Government Documents?</Text>
               <ListItem>
-                <CheckBox checked={false} /*this needs functionality*/ />
+                <CheckBox style={{borderColor: '#103662'}} checked={false} /*this needs functionality*/ />
                 <Body>
                   <Text style={{fontSize: 20}}>Yes</Text>
                 </Body>
               </ListItem>
               <ListItem>
-                <CheckBox checked={false} /*this needs functionality*/ />
+                <CheckBox style={{borderColor: '#103662'}} checked={false} /*this needs functionality*/ />
                 <Body>
                   <Text style={{fontSize: 20}}>No</Text>
                 </Body>
               </ListItem>
-              <Text style={{fontSize: 20, marginTop: 10}}> Paper Mailing?</Text>
+              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Paper Mailing?</Text>
               <ListItem>
-                <CheckBox checked={false} /*this needs functionality*/ />
+                <CheckBox style={{borderColor: '#103662'}} checked={false} /*this needs functionality and colour correction when ticked*/ />
                 <Body>
                   <Text style={{fontSize: 20}}>Yes</Text>
                 </Body>
               </ListItem>
               <ListItem>
-                <CheckBox checked={false} /*this needs functionality*/ />
+                <CheckBox style={{borderColor: '#103662'}} checked={false} /*this needs functionality*/ />
                 <Body>
                   <Text style={{fontSize: 20}}>No</Text>
                 </Body>
               </ListItem>
+              <Right>
+          <Button
+            style={{
+              alignSelf: 'center',
+              backgroundColor: '#103662',
+              marginTop: 20,
+              marginLeft:0,
+              width: 150,
+              height: 50,
+            }}>
+            
+          <Text style={{marginLeft:40}}>Save</Text>
+          </Button>
+          </Right>
             </Content>
           </Tab>
         </Tabs>
