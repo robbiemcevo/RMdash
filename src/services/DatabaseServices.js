@@ -43,6 +43,8 @@ export async function getUserRegistrationInfo() {
       {},
     );
 
+    console.log(success);
+
     if (success) {
       return success.data[0];
     } else {

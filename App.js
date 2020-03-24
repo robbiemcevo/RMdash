@@ -54,6 +54,10 @@ export default class App extends Component {
 
   }
 
+  componentWillUnmount() {
+    AppState.removeEventListener('change', this._handleAppStateChange);
+  }
+
   render() {
     if(!this.state.isLoggedIn) {
       return (
@@ -68,6 +72,7 @@ export default class App extends Component {
       return (
         <NavigationContainer>
           <Stack.Navigator>
+            <Stack.Screen name="Login" component={Login} options={{headerShown: false, animationEnabled: false}}/>
             <Stack.Screen name="MainApp" component={DrawerNavigator} options={{headerShown: false}}/>
             <Stack.Screen name="VerifyPhone" component={VerifyPhone} options={{headerShown: false}}/>
             <Stack.Screen name="ChangePassword" component={ChangePassword} options={{headerShown: false}}/>
