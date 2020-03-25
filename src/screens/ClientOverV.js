@@ -64,6 +64,9 @@ export default class ClientOverV extends Component {
   state = {
     selectedPap: 0,
   };
+  state = {
+    selectedRisk: 0,
+  };
 
   render() {
     const line = {
@@ -591,6 +594,39 @@ export default class ClientOverV extends Component {
                   onPress={() => this.setState({selectedPap: 2})}
                 />
                 <Text style={{fontSize:20, marginStart:7}}>No</Text>
+              </ListItem>
+              <Text
+                style={{
+                  fontSize: 20,
+                  marginStart: 15,
+                  marginTop: 10,
+                  color: '#555555',
+                }}>
+                Risk
+              </Text>
+              <ListItem>
+                <CheckBox
+                  checked={this.state.selectedRisk === 1}
+                  color="#103662"
+                  onPress={() => this.setState({selectedRisk: 1})}
+                />
+                <Text style={{fontSize:20, marginStart:7}}>High</Text>
+              </ListItem>
+              <ListItem>
+                <CheckBox
+                  checked={this.state.selectedRisk === 2}
+                  color="#103662"
+                  onPress={() => this.setState({selectedRisk: 2})}
+                />
+                <Text style={{fontSize:20, marginStart:7}}>Medium</Text>
+              </ListItem>
+              <ListItem>
+                <CheckBox
+                  checked={this.state.selectedRisk === 3}
+                  color="#103662"
+                  onPress={() => this.setState({selectedRisk: 3})}
+                />
+                <Text style={{fontSize:20, marginStart:7}}>Low</Text>
               </ListItem>
               <Right>
                 <Button
