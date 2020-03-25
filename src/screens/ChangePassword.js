@@ -38,11 +38,8 @@ export default class VerifyPhone extends Component {
             marginRight: 10,
           }}>
           <Image
-            source={{
-              url:
-                'http://logok.org/wp-content/uploads/2014/10/Credit-Suisse-Logo-and-Wordmark.png',
-            }}
-            style={{width: 400, height: 100, marginLeft: 1}}
+            source={require('./assets/RMdashlogoDavid.png')}
+            style={{width: 350, height: 110, marginLeft: 20}}
           />
           <Text>To complete registration process, please create a new password. {"\n\n"}
           Password has to be be at least 8 characters which contain at least one lowercase letter, 

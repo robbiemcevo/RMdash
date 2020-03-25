@@ -28,8 +28,10 @@ import {
   Segment,
   bordered,
   Label,
+  View,
 } from 'native-base';
 import CSHeader from '../components/CSHeader';
+import {TouchableOpacity} from 'react-native';
 
 import {getClientData} from '../services/DatabaseServices';
 
@@ -55,6 +57,13 @@ export default class ClientOverV extends Component {
 
     //console.log(this.state.clientData);
   }
+
+  state = {
+    selectedDoc: 0,
+  };
+  state = {
+    selectedPap: 0,
+  };
 
   render() {
     const line = {
@@ -289,40 +298,60 @@ export default class ClientOverV extends Component {
                 }}>
                 Basic Information
               </Text>
-              <Text style={{fontSize: 20, marginStart: 15, color: "#555555"}}>First Name</Text>
+              <Text style={{fontSize: 20, marginStart: 15, color: '#555555'}}>
+                First Name
+              </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input
-                  style={{fontSize: 20, marginStart: 5}}>
+                <Input style={{fontSize: 20, marginStart: 5}}>
                   <Text style={{fontSize: 20, marginStart: 7}}>
                     {this.state.clientData.name}
                   </Text>
                 </Input>
-                </Item>
-              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Last Name</Text>
+              </Item>
+              <Text
+                style={{
+                  fontSize: 20,
+                  marginStart: 15,
+                  marginTop: 10,
+                  color: '#555555',
+                }}>
+                Last Name
+              </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input
-                  style={{fontSize: 20, marginStart: 5}}>
+                <Input style={{fontSize: 20, marginStart: 5}}>
                   <Text style={{fontSize: 20, marginStart: 7}}>
                     {this.state.clientData.surname}
                   </Text>
                 </Input>
               </Item>
-              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Email</Text>
+              <Text
+                style={{
+                  fontSize: 20,
+                  marginStart: 15,
+                  marginTop: 10,
+                  color: '#555555',
+                }}>
+                Email
+              </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input
-                  style={{fontSize: 20, marginStart: 7}}
-                />
+                <Input style={{fontSize: 20, marginStart: 7}} />
               </Item>
-              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Phone Number</Text>
+              <Text
+                style={{
+                  fontSize: 20,
+                  marginStart: 15,
+                  marginTop: 10,
+                  color: '#555555',
+                }}>
+                Phone Number
+              </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input
-                  style={{fontSize: 20, marginStart: 7}}>
-                    <Text style={{fontSize: 20, marginStart: 7}}>
+                <Input style={{fontSize: 20, marginStart: 7}}>
+                  <Text style={{fontSize: 20, marginStart: 7}}>
                     {this.state.clientData.phone_number}
                   </Text>
                 </Input>
               </Item>
-
 
               <Text
                 style={{
@@ -335,71 +364,155 @@ export default class ClientOverV extends Component {
                 }}>
                 Onboarding Information
               </Text>
-              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Date of Birth</Text>
+              <Text
+                style={{
+                  fontSize: 20,
+                  marginStart: 15,
+                  marginTop: 10,
+                  color: '#555555',
+                }}>
+                Date of Birth
+              </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input
-                  style={{fontSize: 20, marginStart: 7}}
-                />
+                <Input style={{fontSize: 20, marginStart: 7}} />
               </Item>
-              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Residential Adress</Text>
+              <Text
+                style={{
+                  fontSize: 20,
+                  marginStart: 15,
+                  marginTop: 10,
+                  color: '#555555',
+                }}>
+                Residential Adress
+              </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input
-                  style={{fontSize: 20, marginStart: 7}}
-                />
+                <Input style={{fontSize: 20, marginStart: 7}} />
               </Item>
-              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Mailing Adress</Text>
+              <Text
+                style={{
+                  fontSize: 20,
+                  marginStart: 15,
+                  marginTop: 10,
+                  color: '#555555',
+                }}>
+                Mailing Adress
+              </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input
-                  style={{fontSize: 20, marginStart: 7}}
-                />
+                <Input style={{fontSize: 20, marginStart: 7}} />
               </Item>
-              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Nationality</Text>
+              <Text
+                style={{
+                  fontSize: 20,
+                  marginStart: 15,
+                  marginTop: 10,
+                  color: '#555555',
+                }}>
+                Nationality
+              </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input
-                  style={{fontSize: 20, marginStart: 7}}
-                />
+                <Input style={{fontSize: 20, marginStart: 7}}>
+                  <Text style={{fontSize: 20, marginStart: 7}}>
+                    {this.state.clientData.nationality}
+                  </Text>
+                </Input>
               </Item>
-              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Reporting Language</Text>
+              <Text
+                style={{
+                  fontSize: 20,
+                  marginStart: 15,
+                  marginTop: 10,
+                  color: '#555555',
+                }}>
+                Reporting Language
+              </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input
-                  style={{fontSize: 20, marginStart: 7}}
-                />
+                <Input style={{fontSize: 20, marginStart: 7}}>
+                  <Text style={{fontSize: 20, marginStart: 7}}>
+                    {this.state.clientData.languages_of_reporting}
+                  </Text>
+                </Input>
               </Item>
-              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Reporting Currency</Text>
+              <Text
+                style={{
+                  fontSize: 20,
+                  marginStart: 15,
+                  marginTop: 10,
+                  color: '#555555',
+                }}>
+                Reporting Currency
+              </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input
-                  style={{fontSize: 20, marginStart: 7}}
-                />
+                <Input style={{fontSize: 20, marginStart: 7}}>
+                  <Text style={{fontSize: 20, marginStart: 7}}>
+                    {this.state.clientData.reporting_currency}
+                  </Text>
+                </Input>
               </Item>
-              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Transit Account Holder</Text>
+              <Text
+                style={{
+                  fontSize: 20,
+                  marginStart: 15,
+                  marginTop: 10,
+                  color: '#555555',
+                }}>
+                Transit Account Holder
+              </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input
-                  style={{fontSize: 20, marginStart: 7}}
-                />
+                <Input style={{fontSize: 20, marginStart: 7}} />
               </Item>
-              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Transit Account Number</Text>
+              <Text
+                style={{
+                  fontSize: 20,
+                  marginStart: 15,
+                  marginTop: 10,
+                  color: '#555555',
+                }}>
+                Transit Account Number
+              </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input
-                  style={{fontSize: 20, marginStart: 7}}
-                />
+                <Input style={{fontSize: 20, marginStart: 7}} />
               </Item>
-              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Sector</Text>
+              <Text
+                style={{
+                  fontSize: 20,
+                  marginStart: 15,
+                  marginTop: 10,
+                  color: '#555555',
+                }}>
+                Sector
+              </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input
-                  style={{fontSize: 20, marginStart: 7}}
-                />
+                <Input style={{fontSize: 20, marginStart: 7}}>
+                  <Text style={{fontSize: 20, marginStart: 7}}>
+                    {this.state.clientData.sector}
+                  </Text>
+                </Input>
               </Item>
-              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Source of Wealth</Text>
+              <Text
+                style={{
+                  fontSize: 20,
+                  marginStart: 15,
+                  marginTop: 10,
+                  color: '#555555',
+                }}>
+                Source of Wealth
+              </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input
-                  style={{fontSize: 20, marginStart: 7}}
-                />
+                <Input style={{fontSize: 20, marginStart: 7}} />
               </Item>
-              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Client Knowledge</Text>
-              <Form >
+              <Text
+                style={{
+                  fontSize: 20,
+                  marginStart: 15,
+                  marginTop: 10,
+                  color: '#555555',
+                }}>
+                Client Knowledge
+              </Text>
+              <Form>
                 <Picker
                   mode="dropdown"
-                  style={{width: 300, color: 'black', fontSize:20}}
+                  style={{width: 300, color: 'black', fontSize: 20}}
                   selectedValue={this.state.selected}
                   onValueChange={this.onValueChange.bind(this)}>
                   <Picker.Item label="Please Select" value="key1" />
@@ -407,7 +520,15 @@ export default class ClientOverV extends Component {
                   <Picker.Item label="Private" value="key2" />
                 </Picker>
               </Form>
-              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>PEP Check</Text>
+              <Text
+                style={{
+                  fontSize: 20,
+                  marginStart: 15,
+                  marginTop: 10,
+                  color: '#555555',
+                }}>
+                PEP Check
+              </Text>
               <Form Inline style={{inlineColor: 'black'}}>
                 <Picker
                   mode="dropdown"
@@ -421,46 +542,69 @@ export default class ClientOverV extends Component {
                   <Picker.Item label="Problematic" value="key4" />
                 </Picker>
               </Form>
-              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Government Documents?</Text>
+              <Text
+                style={{
+                  fontSize: 20,
+                  marginStart: 15,
+                  marginTop: 10,
+                  color: '#555555',
+                }}>
+                Government Documents?
+              </Text>
               <ListItem>
-                <CheckBox style={{borderColor: '#103662'}} checked={false} /*this needs functionality*/ />
-                <Body>
-                  <Text style={{fontSize: 20}}>Yes</Text>
-                </Body>
+                <CheckBox
+                  checked={this.state.selectedDoc === 1}
+                  color="#103662"
+                  onPress={() => this.setState({selectedDoc: 1})}
+                />
+                <Text style={{fontSize:20, marginStart:7}}>Yes</Text>
               </ListItem>
               <ListItem>
-                <CheckBox style={{borderColor: '#103662'}} checked={false} /*this needs functionality*/ />
-                <Body>
-                  <Text style={{fontSize: 20}}>No</Text>
-                </Body>
+                <CheckBox
+                  checked={this.state.selectedDoc === 2}
+                  color="#103662"
+                  onPress={() => this.setState({selectedDoc: 2})}
+                />
+                <Text style={{fontSize:20, marginStart:7}}>No</Text>
               </ListItem>
-              <Text style={{fontSize: 20, marginStart: 15, marginTop:10, color: "#555555"}}>Paper Mailing?</Text>
+              <Text
+                style={{
+                  fontSize: 20,
+                  marginStart: 15,
+                  marginTop: 10,
+                  color: '#555555',
+                }}>
+                Paper Mailing?
+              </Text>
               <ListItem>
-                <CheckBox style={{borderColor: '#103662'}} checked={false} /*this needs functionality and colour correction when ticked*/ />
-                <Body>
-                  <Text style={{fontSize: 20}}>Yes</Text>
-                </Body>
+                <CheckBox
+                  checked={this.state.selectedPap === 1}
+                  color="#103662"
+                  onPress={() => this.setState({selectedPap: 1})}
+                />
+                <Text style={{fontSize:20, marginStart:7}}>Yes</Text>
               </ListItem>
               <ListItem>
-                <CheckBox style={{borderColor: '#103662'}} checked={false} /*this needs functionality*/ />
-                <Body>
-                  <Text style={{fontSize: 20}}>No</Text>
-                </Body>
+                <CheckBox
+                  checked={this.state.selectedPap === 2}
+                  color="#103662"
+                  onPress={() => this.setState({selectedPap: 2})}
+                />
+                <Text style={{fontSize:20, marginStart:7}}>No</Text>
               </ListItem>
               <Right>
-          <Button
-            style={{
-              alignSelf: 'center',
-              backgroundColor: '#103662',
-              marginTop: 20,
-              marginLeft:0,
-              width: 150,
-              height: 50,
-            }}>
-            
-          <Text style={{marginLeft:40}}>Save</Text>
-          </Button>
-          </Right>
+                <Button
+                  style={{
+                    alignSelf: 'center',
+                    backgroundColor: '#103662',
+                    marginTop: 20,
+                    marginLeft: 0,
+                    width: 150,
+                    height: 50,
+                  }}>
+                  <Text style={{marginLeft: 40}}>Save</Text>
+                </Button>
+              </Right>
             </Content>
           </Tab>
         </Tabs>
