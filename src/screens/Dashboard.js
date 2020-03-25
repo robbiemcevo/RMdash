@@ -16,9 +16,6 @@ import {
   Right,
 } from 'native-base';
 
-
-import {onLogOut} from '../services/AuthServices';
-
 import {useNavigation} from '@react-navigation/native';
 import CSHeader from '../components/CSHeader';
 export default class UpcomingEvents extends Component {
@@ -193,18 +190,6 @@ export default class UpcomingEvents extends Component {
               </CardItem>
             ))}
           </Card>
-          <Button
-            style={{
-              backgroundColor: '#103662',
-              marginTop: 30,
-              marginLeft: 40,
-              width: 300,
-              height: 50,
-            }}
-            block
-            onPress={() => onLogOut(this)}>
-            <Text>Log Out</Text>
-          </Button>
         </Content>
       </Container>
     );

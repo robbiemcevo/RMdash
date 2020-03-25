@@ -14,6 +14,7 @@ import ClientList from './src/screens/ClientList';
 import ClientOverV from './src/screens/ClientOverV';
 import VerifyPhone from './src/screens/VerifyPhone';
 import ChangePassword from './src/screens/ChangePassword';
+import Settings from './src/screens/Settings';
 
 import firebase from '@react-native-firebase/app';
 import { onAutoLogOut } from './src/services/AuthServices';
@@ -27,6 +28,7 @@ function DrawerNavigator() {
       <Drawer.Screen name="Dashboard" component={Dashboard} />
       <Drawer.Screen name="New Client" component={NewClient} />
       <Drawer.Screen name="Client List" component={ClientList} />
+      <Drawer.Screen name="Settings and Log Out" component={Settings} />
     </Drawer.Navigator>
   );
 }
