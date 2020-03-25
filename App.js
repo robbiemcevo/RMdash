@@ -73,7 +73,7 @@ export default class App extends Component {
     } else {
       return (
         <NavigationContainer>
-          <Stack.Navigator>
+          <Stack.Navigator initialRouteName="ChangePassword">
             <Stack.Screen name="Login" component={Login} options={{headerShown: false, animationEnabled: false}}/>
             <Stack.Screen name="MainApp" component={DrawerNavigator} options={{headerShown: false}}/>
             <Stack.Screen name="VerifyPhone" component={VerifyPhone} options={{headerShown: false}}/>
