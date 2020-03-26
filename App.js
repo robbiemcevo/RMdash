@@ -5,6 +5,11 @@ import { AppState } from 'react-native';
 import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import {
+  DrawerContentScrollView,
+  DrawerItemList,
+  DrawerItem,
+} from '@react-navigation/drawer';
 
 /* Importing pages from separate files*/
 import Login from './src/screens/Login';
@@ -15,6 +20,9 @@ import ClientOverV from './src/screens/ClientOverV';
 import VerifyPhone from './src/screens/VerifyPhone';
 import ChangePassword from './src/screens/ChangePassword';
 import Settings from './src/screens/Settings';
+import Messages from './src/screens/Messages';
+import Calender from './src/screens/Calender';
+import ProductTraining from './src/screens/ProductTraining';
 
 import firebase from '@react-native-firebase/app';
 import { onAutoLogOut } from './src/services/AuthServices';
@@ -24,10 +32,18 @@ const Drawer = createDrawerNavigator();
 
 function DrawerNavigator() {
   return (
-    <Drawer.Navigator initialRouteName="Dashboard" headerMode="none">
+    <Drawer.Navigator initialRouteName="Dashboard" headerMode="none"
+    drawerContentOptions={{
+      activeTintColor: '#103662',
+      itemStyle: { marginVertical: 7 },
+      labelStyle: {fontSize: 20},
+    }}>
       <Drawer.Screen name="Dashboard" component={Dashboard} />
       <Drawer.Screen name="New Client" component={NewClient} />
       <Drawer.Screen name="Client List" component={ClientList} />
+      <Drawer.Screen name="Messages" component={Messages} />
+      <Drawer.Screen name="Calender" component={Calender} />
+      <Drawer.Screen name="Product Training" component={ProductTraining} />
       <Drawer.Screen name="Settings and Log Out" component={Settings} />
     </Drawer.Navigator>
   );
