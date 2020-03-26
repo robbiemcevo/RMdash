@@ -23,6 +23,7 @@ import Settings from './src/screens/Settings';
 import Messages from './src/screens/Messages';
 import Calender from './src/screens/Calender';
 import ProductTraining from './src/screens/ProductTraining';
+import StocksList from './src/screens/StocksList';
 
 import firebase from '@react-native-firebase/app';
 import { onAutoLogOut } from './src/services/AuthServices';
@@ -45,6 +46,7 @@ function DrawerNavigator() {
       <Drawer.Screen name="Calender" component={Calender} />
       <Drawer.Screen name="Product Training" component={ProductTraining} />
       <Drawer.Screen name="Settings and Log Out" component={Settings} />
+      <Drawer.Screen name="Stocks List" component={StocksList} />
     </Drawer.Navigator>
   );
 }
