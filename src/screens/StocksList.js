@@ -20,7 +20,7 @@ import { ScreenWidth } from '@freakycoder/react-native-helpers';
 import { CustomLayoutSpring } from 'react-native-animation-layout';
 // Static Data
 import staticData from './data/staticData';
-import styles, { centerSubtitleStyle } from '/Users/georginapowell/Desktop/RM dash/RMdash/styles.js';
+import styles, { centerSubtitleStyle } from 'styles.js';
 
 export default class App extends Component {
     constructor(props) {
