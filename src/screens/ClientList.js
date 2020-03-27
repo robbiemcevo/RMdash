@@ -18,7 +18,6 @@ import {
   Thumbnail,
   Spinner
 } from 'native-base';
-import { Circle } from 'better-react-spinkit';
 
 import CSHeader from '../components/CSHeader';
 
