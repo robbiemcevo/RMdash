@@ -337,7 +337,11 @@ export default class ClientOverV extends Component {
                 Email
               </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input style={{fontSize: 20, marginStart: 7}} />
+              <Input style={{fontSize: 20, marginStart: 5}}>
+                  <Text style={{fontSize: 20, marginStart: 7}}>
+                    {this.state.clientData.email}
+                  </Text>
+                </Input>
               </Item>
               <Text
                 style={{
@@ -409,7 +413,11 @@ export default class ClientOverV extends Component {
                 Mailing Adress
               </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input style={{fontSize: 20, marginStart: 7}} />
+              <Input style={{fontSize: 20, marginStart: 5}}>
+                  <Text style={{fontSize: 20, marginStart: 7}}>
+                    {this.state.clientData.mailing_adress}
+                  </Text>
+                </Input>
               </Item>
               <Text
                 style={{
@@ -469,7 +477,11 @@ export default class ClientOverV extends Component {
                 Transit Account Holder
               </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input style={{fontSize: 20, marginStart: 7}} />
+              <Input style={{fontSize: 20, marginStart: 5}}>
+                  <Text style={{fontSize: 20, marginStart: 7}}>
+                    {this.state.clientData.transit_account_holder}
+                  </Text>
+                </Input>
               </Item>
               <Text
                 style={{
@@ -481,7 +493,11 @@ export default class ClientOverV extends Component {
                 Transit Account Number
               </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input style={{fontSize: 20, marginStart: 7}} />
+              <Input style={{fontSize: 20, marginStart: 5}}>
+                  <Text style={{fontSize: 20, marginStart: 7}}>
+                    {this.state.clientData.transit_account_number}
+                  </Text>
+                </Input>
               </Item>
               <Text
                 style={{
@@ -509,7 +525,11 @@ export default class ClientOverV extends Component {
                 Source of Wealth
               </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input style={{fontSize: 20, marginStart: 7}} />
+              <Input style={{fontSize: 20, marginStart: 5}}>
+                  <Text style={{fontSize: 20, marginStart: 7}}>
+                    {this.state.clientData.wealth_source}
+                  </Text>
+                </Input>
               </Item>
               <Text
                 style={{
