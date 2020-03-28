@@ -6,7 +6,7 @@ export default (staticData = [
     change: "+" +Number(Math.round(Math.random() * 10+'e2')+'e-2')  + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/Ripple.png"),
+    
     data: [20,38,12,11,13]
   },
   
@@ -17,7 +17,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/NevaCoin.png"),
     data: [23,6,15,13,18]
   },
   
@@ -28,7 +27,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Netko-coin.png"),
     data: [20,38,12,11,13]
   },
   
@@ -39,7 +37,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/Siacoin.png"),
     data: [40,33,32,27,30]
   },
   
@@ -50,7 +47,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Steem.png"),
     data: [15,42,57,70,72]
   },
   
@@ -61,7 +57,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "5↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Litecoin.png"),
     data: [17,8,15,6,7]
   },
   
@@ -72,7 +67,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/Stratis.png"),
     data: [30,36,83,93,93]
   },
   
@@ -83,7 +77,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Suncontract.png"),
     data: [25,51,92,108,112]
   },
   {
@@ -93,7 +86,6 @@ export default (staticData = [
     change: "+" +Number(Math.round(Math.random() * 10+'e2')+'e-2')  + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/AquariusCoin.png"),
     data: [31,41,24,11,14]
   },
   
@@ -104,7 +96,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Augur.png"),
     data: [14,49,62,67,71]
   },
   
@@ -115,7 +106,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/BitConnect.png"),
     data: [38,11,75,60,60]
   },
   
@@ -126,7 +116,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/BitShares.png"),
     data: [9,16,74,79,80]
   },
   
@@ -137,7 +126,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/ByteCoin.png"),
     data: [42,26,6,11,11]
   },
   
@@ -148,7 +136,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "5↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Dash.png"),
     data: [35,35,32,42,42]
   },
   
@@ -159,7 +146,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/Decred.png"),
     data: [7,25,37,45,48]
   },
   
@@ -170,7 +156,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/EOS.png"),
     data: [46,14,22,15,15]
   },
 
@@ -181,7 +166,6 @@ export default (staticData = [
     change: "+" +Number(Math.round(Math.random() * 10+'e2')+'e-2')  + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/Ethereum.png"),
     data: [38,37,60,43,50]
   },
   
@@ -192,7 +176,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Golem.png"),
     data: [39,26,82,83,83]
   },
   
@@ -203,7 +186,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Iconomi.png"),
     data: [14,50,70,77,77]
   },
   
@@ -214,7 +196,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/IOTA.png"),
     data: [26,42,73,57,59]
   },
   
@@ -225,7 +206,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/LanaCoin.png"),
     data: [15,3,5,8,9]
   },
   
@@ -236,7 +216,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "5↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Litecoin.png"),
     data: [17,8,15,6,7]
   },
   
@@ -247,7 +226,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/Monero.png"),
     data: [13,41,53,72,72]
   },
   
@@ -258,7 +236,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/NEM.png"),
     data: [25,51,92,108,112]
   },
   
@@ -269,7 +246,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/TajCoin.png"),
     data: [5,30,33,16,23]
   },
   
@@ -280,7 +256,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "5↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Waves.png"),
     data: [11,23,50,36,36]
   },
   
@@ -291,7 +266,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/Xaurum.png"),
     data: [37,0,33,14,17]
   },
   
@@ -302,7 +276,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Zcash.png"),
     data: [43,9,19,40,40]
   },
   //-------------------------------------------------------------------------------------------------------------------
@@ -313,7 +286,6 @@ export default (staticData = [
     change: "+" +Number(Math.round(Math.random() * 10+'e2')+'e-2')  + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/Ripple.png"),
     data: [20,26,55,62,63]
   },
   
@@ -324,7 +296,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/NevaCoin.png"),
     data: [35,24,45,35,36]
   },
   
@@ -335,7 +306,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Netko-coin.png"),
     data: [3,2,3,1,4]
   },
   
@@ -346,7 +316,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/Siacoin.png"),
     data: [16,30,66,83,90]
   },
   
@@ -357,7 +326,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Steem.png"),
     data: [46,24,4,4,3]
   },
   
@@ -368,7 +336,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "5↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Litecoin.png"),
     data: [21,28,62,42,43]
   },
   
@@ -379,7 +346,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/Stratis.png"),
     data: [21,8,38,58,65]
   },
   
@@ -390,7 +356,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Suncontract.png"),
     data: [33,21,70,88,87]
   },
   {
@@ -400,7 +365,6 @@ export default (staticData = [
     change: "+" +Number(Math.round(Math.random() * 10+'e2')+'e-2')  + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/AquariusCoin.png"),
     data: [26,54,21,20,20]
   },
   
@@ -411,7 +375,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Augur.png"),
     data: [35,19,38,38,38]
   },
   
@@ -422,7 +385,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/BitConnect.png"),
     data: [39,46,76,78,79]
   },
   
@@ -433,7 +395,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/BitShares.png"),
     data: [29,28,8,29,29]
   },
   
@@ -444,7 +405,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/ByteCoin.png"),
     data: [35,40,60,53,55]
   },
   
@@ -455,7 +415,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "5↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Dash.png"),
     data: [26,22,55,59,64]
   },
   
@@ -466,7 +425,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/Decred.png"),
     data: [27,33,33,39,39]
   },
   
@@ -477,7 +435,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/EOS.png"),
     data: [18,3,48,33,37]
   },
 
@@ -488,7 +445,6 @@ export default (staticData = [
     change: "+" +Number(Math.round(Math.random() * 10+'e2')+'e-2')  + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/Ethereum.png"),
     data: [6,10,51,62,61]
   },
   
@@ -499,7 +455,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Golem.png"),
     data: [39,26,82,83,83]
   },
   
@@ -510,7 +465,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Iconomi.png"),
     data: [19,26,22,12,12]
   },
   
@@ -521,7 +475,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/IOTA.png"),
     data: [10,47,29,37,38]
   },
   
@@ -532,7 +485,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/LanaCoin.png"),
     data: [12,43,41,61,62]
   },
   
@@ -543,7 +495,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "5↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Litecoin.png"),
     data: [10,47,36,30,31]
   },
   
@@ -554,7 +505,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/Monero.png"),
     data: [7,21,76,70,70]
   },
   
@@ -565,7 +515,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/NEM.png"),
     data: [34,24,7,19,23]
   },
   
@@ -576,7 +525,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/TajCoin.png"),
     data: [25,46,60,78,79]
   },
   
@@ -587,7 +535,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "5↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Waves.png"),
     data: [4,43,31,51,54]
   },
   
@@ -598,7 +545,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/Xaurum.png"),
     data: [19,20,51,35,40]
   },
   
@@ -609,7 +555,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Zcash.png"),
     data: [23,44,15,23,25]
   },
   //-------------------------------------------------------------------------------------------------------------------
@@ -620,7 +565,6 @@ export default (staticData = [
     change: "+" +Number(Math.round(Math.random() * 10+'e2')+'e-2')  + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/Ripple.png"),
     data: [16,37,64,53,55]
   },
   
@@ -631,7 +575,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/NevaCoin.png"),
     data: [34,10,31,49,52]
   },
   
@@ -642,7 +585,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Netko-coin.png"),
     data: [36,31,12,10,13]
   },
   
@@ -653,7 +595,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/Siacoin.png"),
     data: [36,36,16,4,9]
   },
   
@@ -664,7 +605,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Steem.png"),
     data: [20,21,13,22,21]
   },
   
@@ -675,7 +615,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "5↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Litecoin.png"),
     data: [4,8,16,29,28]
   },
   
@@ -686,7 +625,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/Stratis.png"),
     data: [33,2,37,56,55]
   },
   
@@ -697,7 +635,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Suncontract.png"),
     data: [30,17,69,65,63]
   },
   {
@@ -707,7 +644,6 @@ export default (staticData = [
     change: "+" +Number(Math.round(Math.random() * 10+'e2')+'e-2')  + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/AquariusCoin.png"),
     data: [26,54,21,20,20]
   },
   
@@ -718,7 +654,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Augur.png"),
     data: [46,17,26,8,12]
   },
   
@@ -729,7 +664,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/BitConnect.png"),
     data: [28,39,51,62,63]
   },
   
@@ -740,7 +674,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/BitShares.png"),
     data: [40,38,17,7,9]
   },
   
@@ -751,7 +684,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/ByteCoin.png"),
     data: [24,41,22,41,44]
   },
   
@@ -762,7 +694,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "5↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Dash.png"),
     data: [23,41,4,-7,-7]
   },
   
@@ -773,7 +704,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/Decred.png"),
     data: [27,33,33,39,39]
   },
   
@@ -784,7 +714,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/EOS.png"),
     data: [30,50,59,67,66]
   },
 
@@ -795,7 +724,6 @@ export default (staticData = [
     change: "+" +Number(Math.round(Math.random() * 10+'e2')+'e-2')  + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/Ethereum.png"),
     data: [47,43,8,18,23]
   },
   
@@ -806,7 +734,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Golem.png"),
     data: [20,44,15,25,0]
   },
   
@@ -817,7 +744,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Iconomi.png"),
     data: [19,26,22,12,12]
   },
   
@@ -828,7 +754,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/IOTA.png"),
     data: [46,10,16,30,33]
   },
   
@@ -839,7 +764,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/LanaCoin.png"),
     data: [12,43,41,61,62]
   },
   
@@ -850,7 +774,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "5↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Litecoin.png"),
     data: [25,16,45,46,52]
   },
   
@@ -861,7 +784,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/Monero.png"),
     data: [27,27,5,17,21]
   },
   
@@ -872,7 +794,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/NEM.png"),
     data: [44,42,67,51,53]
   },
   
@@ -883,7 +804,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/TajCoin.png"),
     data: [11,15,86,86,90]
   },
   
@@ -894,7 +814,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "5↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Waves.png"),
     data: [45,11,32,27,27]
   },
   
@@ -905,7 +824,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↑",
     fillColor: "rgba(163, 224, 97, 0.2)",
     strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("../../assets/Xaurum.png"),
     data: [10,49,19,1,2]
   },
   
@@ -916,7 +834,6 @@ export default (staticData = [
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
     fillColor: "rgba(234, 53, 53, 0.2)",
     strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("../../assets/Zcash.png"),
     data: [43,27,88,85,85]
   }
   //-------------------------------------------------------------------------------------------------------------------

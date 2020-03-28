@@ -7,7 +7,6 @@ import {
     Platform,
     FlatList,
     StatusBar,
-    UIManager,
     SafeAreaView,
     LayoutAnimation } 
     from 'react-native';
@@ -35,10 +34,10 @@ export default class App extends Component {
         dataSource: staticData
       };
   
-      if (Platform.OS === 'android') {
+      /*if (Platform.OS === 'android') {
         UIManager.setLayoutAnimationEnabledExperimental &&
           UIManager.setLayoutAnimationEnabledExperimental(true);
-      }
+      }*/
     }
   
     filterList = text => {
@@ -76,7 +75,6 @@ export default class App extends Component {
           key={item.name}
           title={item.name}
           style={styles.cardStyle}
-          imageSource={item.image}
           centerTitle={item.value}
           subtitle={item.shortName}
           width={ScreenWidth * 0.9}
@@ -84,6 +82,7 @@ export default class App extends Component {
           shadowStyle={styles.cardShadowStyle}
           centerSubtitleStyle={centerSubtitleStyle(item)}
           rightComponent={this.renderRightComponent(item)}
+          backgroundColor= "#ffffff"
         />
       );
     }

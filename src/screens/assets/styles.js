@@ -11,10 +11,10 @@ export const centerSubtitleStyle = item => ({
 export default {
   safeAreaViewStyle: {
     flex: 1,
-    backgroundColor: "#21283d"
+    backgroundColor: "#ffffff"
   },
   flatListStyle: {
-    marginTop: 12
+    marginTop: 0
   },
   cardShadowStyle: {
     ...Platform.select({
@@ -33,10 +33,10 @@ export default {
     })
   },
   cardStyle: {
-    marginTop: 16,
+    marginTop: 30,
     width: ScreenWidth,
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
   },
   container: {
     ...Platform.select({
@@ -47,7 +47,7 @@ export default {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#21283d"
+    backgroundColor: "#ffffff"
   },
   welcome: {
     margin: 10,
