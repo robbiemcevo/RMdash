@@ -389,7 +389,11 @@ export default class ClientOverV extends Component {
                 Residential Adress
               </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input style={{fontSize: 20, marginStart: 7}} />
+                <Input style={{fontSize: 20, marginStart: 0}}>
+                <Text style={{fontSize: 20, marginStart: 0}}>
+                  {this.state.clientData.domicile}
+                  </Text>
+                  </Input>
               </Item>
               <Text
                 style={{
