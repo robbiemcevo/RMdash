@@ -1,5 +1,4 @@
 import {createStackNavigator} from '@react-navigation/stack';
-import {useNavigation} from '@react-navigation/native';
 import {useNavigation, ThemeProvider} from '@react-navigation/native';
 import React, {Component} from 'react';
 import {
@@ -378,7 +377,11 @@ export default class ClientOverV extends Component {
                 Date of Birth
               </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input style={{fontSize: 20, marginStart: 7}} />
+                <Input style={{fontSize: 20, marginStart: 7}}>
+                  <Text style={{fontSize: 20, marginStart: 7}}>
+                    {this.state.clientData.birthday}
+                  </Text>
+                </Input>
               </Item>
               <Text
                 style={{

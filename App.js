@@ -42,7 +42,7 @@ function DrawerNavigator() {
       <Drawer.Screen name="New Client" component={NewClient} />
       <Drawer.Screen name="Client List" component={ClientList} />
       <Drawer.Screen name="Messages" component={Messages} />
-      <Drawer.Screen name="Calender" component={Calender} />
+      <Drawer.Screen name="Calendar" component={Calender} />
       <Drawer.Screen name="Product Training" component={ProductTraining} />
       <Drawer.Screen name="Settings and Log Out" component={Settings} />
     </Drawer.Navigator>
