@@ -8,13 +8,13 @@ import {onLogOut} from '../services/AuthServices';
 
 export default class Settings extends Component {
   render() {
-    const pageTitle = 'Calender';
+    const pageTitle = 'Calendar';
     return (
       <Container>
           <CSHeader pageTitle={pageTitle} />
           <Content padder>
               <Text style={{fontSize:20, textAlign: 'center'}}>
-                  Calender will be coming to RMdash soon!
+                  Calendar will be coming to RMdash soon!
               </Text>
         </Content>
       </Container>

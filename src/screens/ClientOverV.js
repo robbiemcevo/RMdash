@@ -1,5 +1,6 @@
 import {createStackNavigator} from '@react-navigation/stack';
 import {useNavigation} from '@react-navigation/native';
+import {useNavigation, ThemeProvider} from '@react-navigation/native';
 import React, {Component} from 'react';
 import {
   Container,
