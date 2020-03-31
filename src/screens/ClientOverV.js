@@ -50,6 +50,8 @@ export default class ClientOverV extends Component {
     });
   }
 
+
+
   async componentDidMount() {
     console.log(this.props.route.params.client_id);
     let data = await getClientData(this.props.route.params.client_id);
@@ -58,15 +60,6 @@ export default class ClientOverV extends Component {
     //console.log(this.state.clientData);
   }
 
-  state = {
-    selectedDoc: 0,
-  };
-  state = {
-    selectedPap: 0,
-  };
-  state = {
-    selectedRisk: 0,
-  };
 
   render() {
     const line = {
@@ -337,7 +330,7 @@ export default class ClientOverV extends Component {
                 Email
               </Text>
               <Item rounded style={{marginTop: 10}}>
-              <Input style={{fontSize: 20, marginStart: 5}}>
+                <Input style={{fontSize: 20, marginStart: 5}}>
                   <Text style={{fontSize: 20, marginStart: 7}}>
                     {this.state.clientData.email}
                   </Text>
@@ -398,10 +391,10 @@ export default class ClientOverV extends Component {
               </Text>
               <Item rounded style={{marginTop: 10}}>
                 <Input style={{fontSize: 20, marginStart: 0}}>
-                <Text style={{fontSize: 20, marginStart: 0}}>
-                  {this.state.clientData.domicile}
+                  <Text style={{fontSize: 20, marginStart: 0}}>
+                    {this.state.clientData.domicile}
                   </Text>
-                  </Input>
+                </Input>
               </Item>
               <Text
                 style={{
@@ -413,7 +406,7 @@ export default class ClientOverV extends Component {
                 Mailing Adress
               </Text>
               <Item rounded style={{marginTop: 10}}>
-              <Input style={{fontSize: 20, marginStart: 5}}>
+                <Input style={{fontSize: 20, marginStart: 5}}>
                   <Text style={{fontSize: 20, marginStart: 7}}>
                     {this.state.clientData.mailing_adress}
                   </Text>
@@ -477,7 +470,7 @@ export default class ClientOverV extends Component {
                 Transit Account Holder
               </Text>
               <Item rounded style={{marginTop: 10}}>
-              <Input style={{fontSize: 20, marginStart: 5}}>
+                <Input style={{fontSize: 20, marginStart: 5}}>
                   <Text style={{fontSize: 20, marginStart: 7}}>
                     {this.state.clientData.transit_account_holder}
                   </Text>
@@ -493,7 +486,7 @@ export default class ClientOverV extends Component {
                 Transit Account Number
               </Text>
               <Item rounded style={{marginTop: 10}}>
-              <Input style={{fontSize: 20, marginStart: 5}}>
+                <Input style={{fontSize: 20, marginStart: 5}}>
                   <Text style={{fontSize: 20, marginStart: 7}}>
                     {this.state.clientData.transit_account_number}
                   </Text>
@@ -525,7 +518,7 @@ export default class ClientOverV extends Component {
                 Source of Wealth
               </Text>
               <Item rounded style={{marginTop: 10}}>
-              <Input style={{fontSize: 20, marginStart: 5}}>
+                <Input style={{fontSize: 20, marginStart: 5}}>
                   <Text style={{fontSize: 20, marginStart: 7}}>
                     {this.state.clientData.wealth_source}
                   </Text>
@@ -584,19 +577,29 @@ export default class ClientOverV extends Component {
               </Text>
               <ListItem>
                 <CheckBox
-                  checked={this.state.selectedDoc === 1}
+                  checked={
+                    this.state.clientData.government_document_attached ===
+                      'Y' || this.state.government_document_attached === 'Y'
+                  }
                   color="#103662"
-                  onPress={() => this.setState({selectedDoc: 1})}
+                  onPress={() =>
+                    this.setState({government_document_attached: 'Y'})
+                  }
                 />
-                <Text style={{fontSize:20, marginStart:7}}>Yes</Text>
+                <Text style={{fontSize: 20, marginStart: 7}}>Yes</Text>
               </ListItem>
               <ListItem>
                 <CheckBox
-                  checked={this.state.selectedDoc === 2}
+                  checked={
+                    this.state.clientData.government_document_attached ===
+                      'N' || this.state.government_document_attached === 'N'
+                  }
                   color="#103662"
-                  onPress={() => this.setState({selectedDoc: 2})}
+                  onPress={() =>
+                    this.setState({government_document_attached: 'N'})
+                  }
                 />
-                <Text style={{fontSize:20, marginStart:7}}>No</Text>
+                <Text style={{fontSize: 20, marginStart: 7}}>No</Text>
               </ListItem>
               <Text
                 style={{
@@ -609,19 +612,25 @@ export default class ClientOverV extends Component {
               </Text>
               <ListItem>
                 <CheckBox
-                  checked={this.state.selectedPap === 1}
+                  checked={
+                    this.state.clientData.paper_mailing === 'Y' ||
+                    this.state.paper_mailing === 'Y'
+                  }
                   color="#103662"
-                  onPress={() => this.setState({selectedPap: 1})}
+                  onPress={() => this.setState({paper_mailing: 'Y'})}
                 />
-                <Text style={{fontSize:20, marginStart:7}}>Yes</Text>
+                <Text style={{fontSize: 20, marginStart: 7}}>Yes</Text>
               </ListItem>
               <ListItem>
                 <CheckBox
-                  checked={this.state.selectedPap === 2}
+                  checked={
+                    this.state.clientData.paper_mailing === 'N' ||
+                    this.state.paper_mailing === 'N'
+                  }
                   color="#103662"
-                  onPress={() => this.setState({selectedPap: 2})}
+                  onPress={() => this.setState({paper_mailing: 'N'})}
                 />
-                <Text style={{fontSize:20, marginStart:7}}>No</Text>
+                <Text style={{fontSize: 20, marginStart: 7}}>No</Text>
               </ListItem>
               <Text
                 style={{
@@ -634,27 +643,36 @@ export default class ClientOverV extends Component {
               </Text>
               <ListItem>
                 <CheckBox
-                  checked={this.state.selectedRisk === 1}
+                  onPress={() => this.setState({risk: 'l'})}
+                  checked={
+                    this.state.clientData.risk === 'l' ||
+                    this.state.risk === 'l'
+                  }
                   color="#103662"
-                  onPress={() => this.setState({selectedRisk: 1})}
                 />
-                <Text style={{fontSize:20, marginStart:7}}>High</Text>
+                <Text style={{fontSize: 20, marginStart: 7}}>High</Text>
               </ListItem>
               <ListItem>
                 <CheckBox
-                  checked={this.state.selectedRisk === 2}
+                  onPress={() => this.setState({risk: 'm'})}
+                  checked={
+                    this.state.clientData.risk === 'm' ||
+                    this.state.risk === 'm'
+                  }
                   color="#103662"
-                  onPress={() => this.setState({selectedRisk: 2})}
                 />
-                <Text style={{fontSize:20, marginStart:7}}>Medium</Text>
+                <Text style={{fontSize: 20, marginStart: 7}}>Medium</Text>
               </ListItem>
               <ListItem>
                 <CheckBox
-                  checked={this.state.selectedRisk === 3}
+                  onPress={() => this.setState({risk: 's'})}
+                  checked={
+                    this.state.clientData.risk === 's' ||
+                    this.state.risk === 's'
+                  }
                   color="#103662"
-                  onPress={() => this.setState({selectedRisk: 3})}
                 />
-                <Text style={{fontSize:20, marginStart:7}}>Low</Text>
+                <Text style={{fontSize: 20, marginStart: 7}}>Low</Text>
               </ListItem>
               <Right>
                 <Button
@@ -665,7 +683,8 @@ export default class ClientOverV extends Component {
                     marginLeft: 0,
                     width: 150,
                     height: 50,
-                  }}>
+                  }}
+                  >
                   <Text style={{marginLeft: 40}}>Save</Text>
                 </Button>
               </Right>

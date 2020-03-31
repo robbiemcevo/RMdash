@@ -3,9 +3,9 @@ import firebase from '@react-native-firebase/app';
 
 export async function getClientData(client_id) {
   try {
-    const success = await firebase.functions().httpsCallable('getClientProfile')(
-      {client_id: client_id},
-    );
+    const success = await firebase
+      .functions()
+      .httpsCallable('getClientProfile')({client_id: client_id});
 
     if (success) {
       let data = success.data;
@@ -39,9 +39,9 @@ export async function getClientsList() {
 
 export async function getUserRegistrationInfo() {
   try {
-    const success = await firebase.functions().httpsCallable('getUserRegistrationInfo')(
-      {},
-    );
+    const success = await firebase
+      .functions()
+      .httpsCallable('getUserRegistrationInfo')({});
 
     console.log(success);
 
