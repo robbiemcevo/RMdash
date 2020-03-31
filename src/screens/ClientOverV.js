@@ -50,8 +50,6 @@ export default class ClientOverV extends Component {
     });
   }
 
-
-
   async componentDidMount() {
     console.log(this.props.route.params.client_id);
     let data = await getClientData(this.props.route.params.client_id);
@@ -59,7 +57,6 @@ export default class ClientOverV extends Component {
 
     //console.log(this.state.clientData);
   }
-
 
   render() {
     const line = {
@@ -578,12 +575,16 @@ export default class ClientOverV extends Component {
               <ListItem>
                 <CheckBox
                   checked={
-                    this.state.clientData.government_document_attached ===
-                      'Y' || this.state.government_document_attached === 'Y'
+                    this.state.clientData.government_document_attached === 'Y'
                   }
                   color="#103662"
                   onPress={() =>
-                    this.setState({government_document_attached: 'Y'})
+                    this.setState({
+                      clientData: {
+                        ...this.state.clientData,
+                        government_document_attached: 'Y',
+                      },
+                    })
                   }
                 />
                 <Text style={{fontSize: 20, marginStart: 7}}>Yes</Text>
@@ -591,12 +592,16 @@ export default class ClientOverV extends Component {
               <ListItem>
                 <CheckBox
                   checked={
-                    this.state.clientData.government_document_attached ===
-                      'N' || this.state.government_document_attached === 'N'
+                    this.state.clientData.government_document_attached === 'N'
                   }
                   color="#103662"
                   onPress={() =>
-                    this.setState({government_document_attached: 'N'})
+                    this.setState({
+                      clientData: {
+                        ...this.state.clientData,
+                        government_document_attached: 'N',
+                      },
+                    })
                   }
                 />
                 <Text style={{fontSize: 20, marginStart: 7}}>No</Text>
@@ -612,23 +617,31 @@ export default class ClientOverV extends Component {
               </Text>
               <ListItem>
                 <CheckBox
-                  checked={
-                    this.state.clientData.paper_mailing === 'Y' ||
-                    this.state.paper_mailing === 'Y'
-                  }
+                  checked={this.state.clientData.paper_mailing === 'Y'}
                   color="#103662"
-                  onPress={() => this.setState({paper_mailing: 'Y'})}
+                  onPress={() =>
+                    this.setState({
+                      clientData: {
+                        ...this.state.clientData,
+                        paper_mailing: 'Y',
+                      },
+                    })
+                  }
                 />
                 <Text style={{fontSize: 20, marginStart: 7}}>Yes</Text>
               </ListItem>
               <ListItem>
                 <CheckBox
-                  checked={
-                    this.state.clientData.paper_mailing === 'N' ||
-                    this.state.paper_mailing === 'N'
-                  }
+                  checked={this.state.clientData.paper_mailing === 'N'}
                   color="#103662"
-                  onPress={() => this.setState({paper_mailing: 'N'})}
+                  onPress={() =>
+                    this.setState({
+                      clientData: {
+                        ...this.state.clientData,
+                        paper_mailing: 'N',
+                      },
+                    })
+                  }
                 />
                 <Text style={{fontSize: 20, marginStart: 7}}>No</Text>
               </ListItem>
@@ -643,33 +656,36 @@ export default class ClientOverV extends Component {
               </Text>
               <ListItem>
                 <CheckBox
-                  onPress={() => this.setState({risk: 'l'})}
-                  checked={
-                    this.state.clientData.risk === 'l' ||
-                    this.state.risk === 'l'
+                  onPress={() =>
+                    this.setState({
+                      clientData: {...this.state.clientData, risk: 'l'},
+                    })
                   }
+                  checked={this.state.clientData.risk === 'l'}
                   color="#103662"
                 />
                 <Text style={{fontSize: 20, marginStart: 7}}>High</Text>
               </ListItem>
               <ListItem>
                 <CheckBox
-                  onPress={() => this.setState({risk: 'm'})}
-                  checked={
-                    this.state.clientData.risk === 'm' ||
-                    this.state.risk === 'm'
+                  onPress={() =>
+                    this.setState({
+                      clientData: {...this.state.clientData, risk: 'm'},
+                    })
                   }
+                  checked={this.state.clientData.risk === 'm'}
                   color="#103662"
                 />
                 <Text style={{fontSize: 20, marginStart: 7}}>Medium</Text>
               </ListItem>
               <ListItem>
                 <CheckBox
-                  onPress={() => this.setState({risk: 's'})}
-                  checked={
-                    this.state.clientData.risk === 's' ||
-                    this.state.risk === 's'
+                  onPress={() =>
+                    this.setState({
+                      clientData: {...this.state.clientData, risk: 's'},
+                    })
                   }
+                  checked={this.state.clientData.risk === 's'}
                   color="#103662"
                 />
                 <Text style={{fontSize: 20, marginStart: 7}}>Low</Text>
@@ -683,8 +699,7 @@ export default class ClientOverV extends Component {
                     marginLeft: 0,
                     width: 150,
                     height: 50,
-                  }}
-                  >
+                  }}>
                   <Text style={{marginLeft: 40}}>Save</Text>
                 </Button>
               </Right>
