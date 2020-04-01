@@ -52,11 +52,11 @@ export default class ClientOverV extends Component {
   async onUpdateClientKYC(data) {
     const result = await updateClientKYC(data);
 
-    if(result) {
+    if (result) {
       Alert.alert(
         'Client data updated',
-        'Client data was successfuly updated!'
-      )
+        'Client data was successfuly updated!',
+      );
     }
   }
 
@@ -337,7 +337,7 @@ export default class ClientOverV extends Component {
                 Email
               </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input style={{fontSize: 20, marginStart: 5}}>
+                <Input style={{fontSize: 20, marginStart: 5}} onValueChange>
                   <Text style={{fontSize: 20, marginStart: 7}}>
                     {this.state.clientData.email}
                   </Text>
@@ -353,7 +353,9 @@ export default class ClientOverV extends Component {
                 Phone Number
               </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input style={{fontSize: 20, marginStart: 7}}>
+                <Input
+                  style={{fontSize: 20, marginStart: 7}}
+                  >
                   <Text style={{fontSize: 20, marginStart: 7}}>
                     {this.state.clientData.phone_number}
                   </Text>
@@ -540,17 +542,36 @@ export default class ClientOverV extends Component {
                 }}>
                 Client Knowledge
               </Text>
-              <Form>
-                <Picker
-                  mode="dropdown"
-                  style={{width: 300, color: 'black', fontSize: 20}}
-                  selectedValue={this.state.selected}
-                  onValueChange={this.onValueChange.bind(this)}>
-                  <Picker.Item label="Please Select" value="key1" />
-                  <Picker.Item label="Professional" value="key0" />
-                  <Picker.Item label="Private" value="key2" />
-                </Picker>
-              </Form>
+              <ListItem>
+                <CheckBox
+                  checked={this.state.clientData.client_knowledge === 'pri'}
+                  color="#103662"
+                  onPress={() =>
+                    this.setState({
+                      clientData: {
+                        ...this.state.clientData,
+                        client_knowledge: 'pri',
+                      },
+                    })
+                  }
+                />
+                <Text style={{fontSize: 20, marginStart: 7}}>Private</Text>
+              </ListItem>
+              <ListItem>
+                <CheckBox
+                  checked={this.state.clientData.client_knowledge === 'pro'}
+                  color="#103662"
+                  onPress={() =>
+                    this.setState({
+                      clientData: {
+                        ...this.state.clientData,
+                        client_knowledge: 'pro',
+                      },
+                    })
+                  }
+                />
+                <Text style={{fontSize: 20, marginStart: 7}}>Professional</Text>
+              </ListItem>
               <Text
                 style={{
                   fontSize: 20,
@@ -560,19 +581,66 @@ export default class ClientOverV extends Component {
                 }}>
                 PEP Check
               </Text>
-              <Form Inline style={{inlineColor: 'black'}}>
-                <Picker
-                  mode="dropdown"
-                  style={{width: 300, color: 'black', fontSize: 20}}
-                  selectedValue={this.state.selected}
-                  onValueChange={this.onValueChange.bind(this)}>
-                  <Picker.Item label="Please Select" value="key1" />
-                  <Picker.Item label="Clear" value="key0" />
-                  <Picker.Item label="In Progress" value="key2" />
-                  <Picker.Item label="Not Done" value="key3" />
-                  <Picker.Item label="Problematic" value="key4" />
-                </Picker>
-              </Form>
+              <ListItem>
+                <CheckBox
+                  checked={this.state.clientData.pep_status === 'c'}
+                  color="#103662"
+                  onPress={() =>
+                    this.setState({
+                      clientData: {
+                        ...this.state.clientData,
+                        pep_status: 'c',
+                      },
+                    })
+                  }
+                />
+                <Text style={{fontSize: 20, marginStart: 7}}>Clear</Text>
+              </ListItem>
+              <ListItem>
+                <CheckBox
+                  checked={this.state.clientData.pep_status === 'ip'}
+                  color="#103662"
+                  onPress={() =>
+                    this.setState({
+                      clientData: {
+                        ...this.state.clientData,
+                        pep_status: 'ip',
+                      },
+                    })
+                  }
+                />
+                <Text style={{fontSize: 20, marginStart: 7}}>In Progress</Text>
+              </ListItem>
+              <ListItem>
+                <CheckBox
+                  checked={this.state.clientData.pep_status === 'nd'}
+                  color="#103662"
+                  onPress={() =>
+                    this.setState({
+                      clientData: {
+                        ...this.state.clientData,
+                        pep_status: 'nd',
+                      },
+                    })
+                  }
+                />
+                <Text style={{fontSize: 20, marginStart: 7}}>Not Done</Text>
+              </ListItem>
+              <ListItem>
+                <CheckBox
+                  checked={this.state.clientData.pep_status === 'p'}
+                  color="#103662"
+                  onPress={() =>
+                    this.setState({
+                      clientData: {
+                        ...this.state.clientData,
+                        pep_status: 'p',
+                      },
+                    })
+                  }
+                />
+                <Text style={{fontSize: 20, marginStart: 7}}>Problematic</Text>
+              </ListItem>
               <Text
                 style={{
                   fontSize: 20,

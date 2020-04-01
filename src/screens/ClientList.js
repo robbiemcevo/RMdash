@@ -16,18 +16,22 @@ import {
   List,
   ListItem,
   Thumbnail,
-  Spinner
+  Spinner,
+  View,
+  Image,
 } from 'native-base';
 
 import CSHeader from '../components/CSHeader';
 
 import {getClientsList} from '../services/DatabaseServices';
+import {getClientData} from '../services/DatabaseServices';
 
 export default class ClientList extends Component {
   constructor(props) {
     super(props);
     this.state = {
       listItems: [],
+      clientData: '',
       isLoaded: false,
     };
   }
@@ -41,26 +45,41 @@ export default class ClientList extends Component {
     console.log(this.state.listItems);
   }
 
+  listItems(risk) {
+    if (risk === 'l') {
+      return require('./assets/IconRed.png');
+    } else if (risk === 'm') {
+      return require('./assets/IconYellow.png');
+    } else if (risk === 's') {
+      return require('./assets/IronGreen.png');
+    } else {
+      return require('./assets/user.png');
+    }
+  }
+
   render() {
     const {error, isLoaded, listItems} = this.state;
 
     const pageTitle = 'Client List';
 
-    if(!isLoaded) {
+    if (!isLoaded) {
       return (
         <Container>
           <CSHeader pageTitle={pageTitle} />
-          <Content contentContainerStyle={{
-            justifyContent: 'center',
-            flex: 1,
-            marginLeft: 10,
-            marginRight: 10,
-          }}>
+          <Content
+            contentContainerStyle={{
+              justifyContent: 'center',
+              flex: 1,
+              marginLeft: 10,
+              marginRight: 10,
+            }}>
             <Spinner color='#103662'/>
           </Content>
         </Container>
-      )
+      );
     } else {
+
+      
       return (
         <Container>
           <CSHeader pageTitle={pageTitle} />
@@ -71,9 +90,9 @@ export default class ClientList extends Component {
                   <Left>
                     <Thumbnail
                       circular
-                      source={require('./assets/user.png')}
+                      source={this.listItems(item.risk)}
                       style={{width: 50, height: 50}}
-                    />
+                      />
                   </Left>
                   <Body>
                     <Text style={{fontSize: 20}}>
@@ -83,17 +102,28 @@ export default class ClientList extends Component {
                   <Right>
                     <Button
                       bordered
-                      style={{borderColor: '#103662', marginTop: -10, borderStartWidth: 1.5,
-                      borderEndWidth: 1.5,
-                      borderTopWidth: 1.5,
-                      borderBottomWidth: 1.5}}
+                      style={{
+                        borderColor: '#103662',
+                        marginTop: -10,
+                        borderStartWidth: 1.5,
+                        borderEndWidth: 1.5,
+                        borderTopWidth: 1.5,
+                        borderBottomWidth: 1.5,
+                      }}
                       onPress={() =>
                         this.props.navigation.push('ClientOverV', {
                           client_id: item.client_id,
                           nameSurname: item.name + ' ' + item.surname,
                         })
                       }>
-                      <Text style={{color: '#103662', fontSize: 20, fontWeight: '500'}}>View</Text>
+                      <Text
+                        style={{
+                          color: '#103662',
+                          fontSize: 20,
+                          fontWeight: '500',
+                        }}>
+                        View
+                      </Text>
                     </Button>
                   </Right>
                 </ListItem>
