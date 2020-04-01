@@ -18,7 +18,7 @@ import {
   Thumbnail,
   Spinner,
   View,
-  Image
+  Image,
 } from 'native-base';
 
 import CSHeader from '../components/CSHeader';
@@ -43,68 +43,43 @@ export default class ClientList extends Component {
     this.setState({isLoaded: true});
 
     console.log(this.state.listItems);
-
-    console.log(this.props.route.params.client_id);
-    let datas = await getClientData(this.props.route.params.client_id);
-    this.setState({clientData: datas});
   }
 
+  listItems(risk) {
+    if (risk === 'l') {
+      return require('./assets/IconRed.png');
+    } else if (risk === 'm') {
+      return require('./assets/IconYellow.png');
+    } else if (risk === 's') {
+      return require('./assets/IronGreen.png');
+    } else {
+      return require('./assets/user.png');
+    }
+  }
 
   render() {
     const {error, isLoaded, listItems} = this.state;
 
     const pageTitle = 'Client List';
 
-    if(!isLoaded) {
+    if (!isLoaded) {
       return (
         <Container>
           <CSHeader pageTitle={pageTitle} />
-          <Content contentContainerStyle={{
-            justifyContent: 'center',
-            flex: 1,
-            marginLeft: 10,
-            marginRight: 10,
-          }}>
+          <Content
+            contentContainerStyle={{
+              justifyContent: 'center',
+              flex: 1,
+              marginLeft: 10,
+              marginRight: 10,
+            }}>
             <Spinner color='#103662'/>
           </Content>
         </Container>
-      )
+      );
     } else {
-      const highrisk = (
-        <View>
-          circular source={require('./assets/IconRed.png')}
-          style={{width: 50, height: 50}}
-        </View>
-      );
-      const mediumrisk = (
-        <View>
-          circular source={require('./assets/IconYellow.png')}
-          style={{width: 50, height: 50}}
-        </View>
-      );
-      const lowrisk = (
-        <View>
-          circular source={require('./assets/IronGreen.png')}
-          style={{width: 50, height: 50}}
-        </View>
-      );
-      const norisk = (
-        <View>
-          circular source={require('./assets/user.png')}
-          style={{width: 50, height: 50}}
-        </View>
-      );
 
-      let image;
-      if (this.state.clientData.risk === 'l') {
-        image = highrisk;
-      } else if (this.state.clientData.risk === 'm') {
-        image = mediumrisk;
-      } else if (this.state.clientData.risk === 's') {
-        image = lowrisk;
-      } else {
-        image = norisk;
-      }
+      
       return (
         <Container>
           <CSHeader pageTitle={pageTitle} />
@@ -113,7 +88,11 @@ export default class ClientList extends Component {
               {listItems.map(item => (
                 <ListItem thumbnail style={{marginTop: 20, marginBottom: 20}}>
                   <Left>
-                    <Thumbnail {...image} />
+                    <Thumbnail
+                      circular
+                      source={this.listItems(item.risk)}
+                      style={{width: 50, height: 50}}
+                      />
                   </Left>
                   <Body>
                     <Text style={{fontSize: 20}}>
@@ -123,17 +102,28 @@ export default class ClientList extends Component {
                   <Right>
                     <Button
                       bordered
-                      style={{borderColor: '#103662', marginTop: -10, borderStartWidth: 1.5,
-                      borderEndWidth: 1.5,
-                      borderTopWidth: 1.5,
-                      borderBottomWidth: 1.5}}
+                      style={{
+                        borderColor: '#103662',
+                        marginTop: -10,
+                        borderStartWidth: 1.5,
+                        borderEndWidth: 1.5,
+                        borderTopWidth: 1.5,
+                        borderBottomWidth: 1.5,
+                      }}
                       onPress={() =>
                         this.props.navigation.push('ClientOverV', {
                           client_id: item.client_id,
                           nameSurname: item.name + ' ' + item.surname,
                         })
                       }>
-                      <Text style={{color: '#103662', fontSize: 20, fontWeight: '500'}}>View</Text>
+                      <Text
+                        style={{
+                          color: '#103662',
+                          fontSize: 20,
+                          fontWeight: '500',
+                        }}>
+                        View
+                      </Text>
                     </Button>
                   </Right>
                 </ListItem>
