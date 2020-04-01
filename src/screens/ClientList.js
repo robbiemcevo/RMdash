@@ -16,18 +16,22 @@ import {
   List,
   ListItem,
   Thumbnail,
-  Spinner
+  Spinner,
+  View,
+  Image
 } from 'native-base';
 
 import CSHeader from '../components/CSHeader';
 
 import {getClientsList} from '../services/DatabaseServices';
+import {getClientData} from '../services/DatabaseServices';
 
 export default class ClientList extends Component {
   constructor(props) {
     super(props);
     this.state = {
       listItems: [],
+      clientData: '',
       isLoaded: false,
     };
   }
@@ -39,7 +43,12 @@ export default class ClientList extends Component {
     this.setState({isLoaded: true});
 
     console.log(this.state.listItems);
+
+    console.log(this.props.route.params.client_id);
+    let datas = await getClientData(this.props.route.params.client_id);
+    this.setState({clientData: datas});
   }
+
 
   render() {
     const {error, isLoaded, listItems} = this.state;
@@ -61,6 +70,41 @@ export default class ClientList extends Component {
         </Container>
       )
     } else {
+      const highrisk = (
+        <View>
+          circular source={require('./assets/IconRed.png')}
+          style={{width: 50, height: 50}}
+        </View>
+      );
+      const mediumrisk = (
+        <View>
+          circular source={require('./assets/IconYellow.png')}
+          style={{width: 50, height: 50}}
+        </View>
+      );
+      const lowrisk = (
+        <View>
+          circular source={require('./assets/IronGreen.png')}
+          style={{width: 50, height: 50}}
+        </View>
+      );
+      const norisk = (
+        <View>
+          circular source={require('./assets/user.png')}
+          style={{width: 50, height: 50}}
+        </View>
+      );
+
+      let image;
+      if (this.state.clientData.risk === 'l') {
+        image = highrisk;
+      } else if (this.state.clientData.risk === 'm') {
+        image = mediumrisk;
+      } else if (this.state.clientData.risk === 's') {
+        image = lowrisk;
+      } else {
+        image = norisk;
+      }
       return (
         <Container>
           <CSHeader pageTitle={pageTitle} />
@@ -69,11 +113,7 @@ export default class ClientList extends Component {
               {listItems.map(item => (
                 <ListItem thumbnail style={{marginTop: 20, marginBottom: 20}}>
                   <Left>
-                    <Thumbnail
-                      circular
-                      source={require('./assets/user.png')}
-                      style={{width: 50, height: 50}}
-                    />
+                    <Thumbnail {...image} />
                   </Left>
                   <Body>
                     <Text style={{fontSize: 20}}>
