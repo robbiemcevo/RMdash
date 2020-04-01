@@ -614,7 +614,6 @@ export default class ClientOverV extends Component {
               </Text>
               <ListItem>
                 <CheckBox
-                  checked={this.state.selectedRisk === 1}
                   checked={this.state.selectedRisk === 1 ? true : false}
                   color="#103662"
                   onPress={() => this.setState({selectedRisk: 1})}
