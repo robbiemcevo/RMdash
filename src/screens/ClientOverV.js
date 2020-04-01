@@ -305,11 +305,14 @@ export default class ClientOverV extends Component {
                 First Name
               </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input style={{fontSize: 20, marginStart: 5}}>
-                  <Text style={{fontSize: 20, marginStart: 7}}>
-                    {this.state.clientData.name}
-                  </Text>
-                </Input>
+                <Input style={{fontSize: 20, marginStart: 7}}
+                onChangeText={text => this.setState({
+                  clientData: {
+                    ...this.state.clientData,
+                    name: text,
+                  },
+                })}
+                value={this.state.clientData.name} />
               </Item>
               <Text
                 style={{
@@ -321,11 +324,14 @@ export default class ClientOverV extends Component {
                 Last Name
               </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input style={{fontSize: 20, marginStart: 5}}>
-                  <Text style={{fontSize: 20, marginStart: 7}}>
-                    {this.state.clientData.surname}
-                  </Text>
-                </Input>
+              <Input style={{fontSize: 20, marginStart: 7}}
+                onChangeText={text => this.setState({
+                  clientData: {
+                    ...this.state.clientData,
+                    surname: text,
+                  },
+                })}
+                value={this.state.clientData.surname} />
               </Item>
               <Text
                 style={{
@@ -337,11 +343,14 @@ export default class ClientOverV extends Component {
                 Email
               </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input style={{fontSize: 20, marginStart: 5}} onValueChange>
-                  <Text style={{fontSize: 20, marginStart: 7}}>
-                    {this.state.clientData.email}
-                  </Text>
-                </Input>
+              <Input style={{fontSize: 20, marginStart: 7}}
+                onChangeText={text => this.setState({
+                  clientData: {
+                    ...this.state.clientData,
+                    email: text,
+                  },
+                })}
+                value={this.state.clientData.email} />
               </Item>
               <Text
                 style={{
@@ -353,13 +362,14 @@ export default class ClientOverV extends Component {
                 Phone Number
               </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input
-                  style={{fontSize: 20, marginStart: 7}}
-                  >
-                  <Text style={{fontSize: 20, marginStart: 7}}>
-                    {this.state.clientData.phone_number}
-                  </Text>
-                </Input>
+              <Input style={{fontSize: 20, marginStart: 7}}
+                onChangeText={text => this.setState({
+                  clientData: {
+                    ...this.state.clientData,
+                    phone_number: text,
+                  },
+                })}
+                value={this.state.clientData.phone_number} />
               </Item>
 
               <Text
@@ -383,11 +393,14 @@ export default class ClientOverV extends Component {
                 Date of Birth
               </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input style={{fontSize: 20, marginStart: 7}}>
-                  <Text style={{fontSize: 20, marginStart: 7}}>
-                    {this.state.clientData.birthday}
-                  </Text>
-                </Input>
+              <Input style={{fontSize: 20, marginStart: 7}}
+                onChangeText={text => this.setState({
+                  clientData: {
+                    ...this.state.clientData,
+                    birthday: text,
+                  },
+                })}
+                value={this.state.clientData.birthday} />
               </Item>
               <Text
                 style={{
@@ -399,11 +412,14 @@ export default class ClientOverV extends Component {
                 Residential Adress
               </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input style={{fontSize: 20, marginStart: 0}}>
-                  <Text style={{fontSize: 20, marginStart: 0}}>
-                    {this.state.clientData.domicile}
-                  </Text>
-                </Input>
+              <Input style={{fontSize: 20, marginStart: 7}}
+                onChangeText={text => this.setState({
+                  clientData: {
+                    ...this.state.clientData,
+                    domicile: text,
+                  },
+                })}
+                value={this.state.clientData.domicile} />
               </Item>
               <Text
                 style={{
@@ -415,11 +431,14 @@ export default class ClientOverV extends Component {
                 Mailing Adress
               </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input style={{fontSize: 20, marginStart: 5}}>
-                  <Text style={{fontSize: 20, marginStart: 7}}>
-                    {this.state.clientData.mailing_adress}
-                  </Text>
-                </Input>
+              <Input style={{fontSize: 20, marginStart: 7}}
+                onChangeText={text => this.setState({
+                  clientData: {
+                    ...this.state.clientData,
+                    mailing_address: text,
+                  },
+                })}
+                value={this.state.clientData.mailing_address} />
               </Item>
               <Text
                 style={{
@@ -431,11 +450,14 @@ export default class ClientOverV extends Component {
                 Nationality
               </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input style={{fontSize: 20, marginStart: 7}}>
-                  <Text style={{fontSize: 20, marginStart: 7}}>
-                    {this.state.clientData.nationality}
-                  </Text>
-                </Input>
+              <Input style={{fontSize: 20, marginStart: 7}}
+                onChangeText={text => this.setState({
+                  clientData: {
+                    ...this.state.clientData,
+                    nationality: text,
+                  },
+                })}
+                value={this.state.clientData.nationality} />
               </Item>
               <Text
                 style={{
@@ -447,11 +469,14 @@ export default class ClientOverV extends Component {
                 Reporting Language
               </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input style={{fontSize: 20, marginStart: 7}}>
-                  <Text style={{fontSize: 20, marginStart: 7}}>
-                    {this.state.clientData.languages_of_reporting}
-                  </Text>
-                </Input>
+              <Input style={{fontSize: 20, marginStart: 7}}
+                onChangeText={text => this.setState({
+                  clientData: {
+                    ...this.state.clientData,
+                    languages_of_reporting: text,
+                  },
+                })}
+                value={this.state.clientData.languages_of_reporting} />
               </Item>
               <Text
                 style={{
@@ -463,11 +488,14 @@ export default class ClientOverV extends Component {
                 Reporting Currency
               </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input style={{fontSize: 20, marginStart: 7}}>
-                  <Text style={{fontSize: 20, marginStart: 7}}>
-                    {this.state.clientData.reporting_currency}
-                  </Text>
-                </Input>
+              <Input style={{fontSize: 20, marginStart: 7}}
+                onChangeText={text => this.setState({
+                  clientData: {
+                    ...this.state.clientData,
+                    reporting_currency: text,
+                  },
+                })}
+                value={this.state.clientData.reporting_currency} />
               </Item>
               <Text
                 style={{
@@ -479,11 +507,14 @@ export default class ClientOverV extends Component {
                 Transit Account Holder
               </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input style={{fontSize: 20, marginStart: 5}}>
-                  <Text style={{fontSize: 20, marginStart: 7}}>
-                    {this.state.clientData.transit_account_holder}
-                  </Text>
-                </Input>
+              <Input style={{fontSize: 20, marginStart: 7}}
+                onChangeText={text => this.setState({
+                  clientData: {
+                    ...this.state.clientData,
+                    transit_account_holder: text,
+                  },
+                })}
+                value={this.state.clientData.transit_account_holder} />
               </Item>
               <Text
                 style={{
@@ -495,11 +526,14 @@ export default class ClientOverV extends Component {
                 Transit Account Number
               </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input style={{fontSize: 20, marginStart: 5}}>
-                  <Text style={{fontSize: 20, marginStart: 7}}>
-                    {this.state.clientData.transit_account_number}
-                  </Text>
-                </Input>
+              <Input style={{fontSize: 20, marginStart: 7}}
+                onChangeText={text => this.setState({
+                  clientData: {
+                    ...this.state.clientData,
+                    transit_account_number: text,
+                  },
+                })}
+                value={this.state.clientData.transit_account_number} />
               </Item>
               <Text
                 style={{
@@ -511,11 +545,14 @@ export default class ClientOverV extends Component {
                 Sector
               </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input style={{fontSize: 20, marginStart: 7}}>
-                  <Text style={{fontSize: 20, marginStart: 7}}>
-                    {this.state.clientData.sector}
-                  </Text>
-                </Input>
+              <Input style={{fontSize: 20, marginStart: 7}}
+                onChangeText={text => this.setState({
+                  clientData: {
+                    ...this.state.clientData,
+                    surname: sector,
+                  },
+                })}
+                value={this.state.clientData.sector} />
               </Item>
               <Text
                 style={{
@@ -527,11 +564,14 @@ export default class ClientOverV extends Component {
                 Source of Wealth
               </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input style={{fontSize: 20, marginStart: 5}}>
-                  <Text style={{fontSize: 20, marginStart: 7}}>
-                    {this.state.clientData.wealth_source}
-                  </Text>
-                </Input>
+              <Input style={{fontSize: 20, marginStart: 7}}
+                onChangeText={text => this.setState({
+                  clientData: {
+                    ...this.state.clientData,
+                    wealth_source: text,
+                  },
+                })}
+                value={this.state.clientData.wealth_source} />
               </Item>
               <Text
                 style={{

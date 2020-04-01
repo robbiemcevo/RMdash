@@ -29,21 +29,23 @@ export default class AddClient extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected: 'key1',
       name: '',
       surname: '',
       email: '',
-      phone_number: ''
+      phone: ''
     };
-  }
-  onValueChange(value) {
-    this.setState({
-      selected: value,
-    });
-  }
+    this.initialState = {
+      name: '',
+      surname: '',
+      email: '',
+      phone: ''
+    };
+  };
 
   async onAddClient(name, surname, email, phone_number) {
     const result = await addClient(name, surname, email, phone_number);
+
+    this.setState(this.initialState);
 
     if(result) {
       Alert.alert(

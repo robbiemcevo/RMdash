@@ -6,6 +6,8 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 export async function onLogin(email, password, that) {
 
+  that.setState({errorMsg: ''});
+
   if (!email || !password) {
     await that.setState({errorMsg: 'Email or password is incorrect'});
   } else {
@@ -18,6 +20,8 @@ export async function onLogin(email, password, that) {
       console.log(userRegistrationInfo.is_registered);
 
       await AsyncStorage.setItem('userEmail', email);
+
+      that.setState({password: ''});
 
       if(userRegistrationInfo.is_registered === 1) {
         that.props.navigation.navigate('MainApp');

@@ -36,13 +36,24 @@ export default class ClientList extends Component {
     };
   }
 
-  async componentDidMount() {
-    let data = await getClientsList();
-    this.setState({listItems: data});
+  componentDidMount() {
+    this._unsubscribeFocus = this.props.navigation.addListener('focus', async () => {
+      let data = await getClientsList();
+      this.setState({listItems: data});
 
-    this.setState({isLoaded: true});
+      this.setState({isLoaded: true});
 
-    console.log(this.state.listItems);
+      console.log(this.state.listItems);
+    });
+
+    this._unsubscribeBlur = this.props.navigation.addListener('focus', async () => {
+      this.setState({isLoaded: false});
+    });
+  }
+
+  componentWillUnmount() {
+    this._unsubscribeFocus();
+    this._unsubscribeBlur();
   }
 
   listItems(risk) {

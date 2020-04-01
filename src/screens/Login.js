@@ -61,7 +61,7 @@ export default class Login extends Component {
             </Item>
             <Item error={errorMsg ? true : false} inlineLabel>
               <Label style={errorMsg ? {color: '#d9534f'} : {}}>Password</Label>
-              <Input secureTextEntry={true} onChangeText={(password) => this.setState({password})} />
+              <Input value={this.state.password} secureTextEntry={true} onChangeText={(password) => this.setState({password})} />
             </Item>
           </Form>
           <Button
