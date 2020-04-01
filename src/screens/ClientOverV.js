@@ -31,9 +31,9 @@ import {
   View,
 } from 'native-base';
 import CSHeader from '../components/CSHeader';
-import {TouchableOpacity} from 'react-native';
+import {TouchableOpacity, Alert} from 'react-native';
 
-import {getClientData} from '../services/DatabaseServices';
+import {getClientData, updateClientKYC} from '../services/DatabaseServices';
 
 export default class ClientOverV extends Component {
   constructor(props) {
@@ -48,6 +48,16 @@ export default class ClientOverV extends Component {
     this.setState({
       selected: value,
     });
+  }
+  async onUpdateClientKYC(data) {
+    const result = await updateClientKYC(data);
+
+    if(result) {
+      Alert.alert(
+        'Client data updated',
+        'Client data was successfuly updated!'
+      )
+    }
   }
 
   async componentDidMount() {
@@ -699,7 +709,8 @@ export default class ClientOverV extends Component {
                     marginLeft: 0,
                     width: 150,
                     height: 50,
-                  }}>
+                  }}
+                  onPress={() => this.onUpdateClientKYC(this.state.clientData)}>
                   <Text style={{marginLeft: 40}}>Save</Text>
                 </Button>
               </Right>
