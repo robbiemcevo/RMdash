@@ -78,3 +78,21 @@ export async function updateClientKYC(data) {
     console.error(e);
   }
 }
+
+export async function addClient(name, surname, email, phone_number) {
+  try {
+    const success = await firebase.functions().httpsCallable('AddClient')(
+      {name: name, surname: surname, email: email, phone_number: phone_number},
+    );
+
+    if (success) {
+      let data = success.data;
+      console.log(data);
+      return data;
+    } else {
+      console.warn('Woops, looks like something went wrong!');
+    }
+  } catch (e) {
+    console.error(e);
+  }
+}
