@@ -31,7 +31,7 @@ export default (staticData = [
   },
   
   {
-    name: "Principal European Equity Inc Units",
+    name: "Principal European Equity Inc U",
     shortName: "PEE",
     value: "$" + Number(Math.round(Math.random() * 5000+'e2')+'e-2'),
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↑",
@@ -41,7 +41,7 @@ export default (staticData = [
   },
   
   {
-    name: "Principal Global Equity Inv Income",
+    name: "Principal Global Equity Inc I",
     shortName: "PGE",
     value: "$" + Number(Math.round(Math.random() * 5000+'e2')+'e-2'),
     change: "+" + Number(Math.round(Math.random() * 10+'e2')+'e-2') + "%↓",
