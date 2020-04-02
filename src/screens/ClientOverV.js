@@ -776,6 +776,18 @@ export default class ClientOverV extends Component {
                 <CheckBox
                   onPress={() =>
                     this.setState({
+                      clientData: {...this.state.clientData, risk: 'u'},
+                    })
+                  }
+                  checked={this.state.clientData.risk === 'u'}
+                  color="#103662"
+                />
+                <Text style={{fontSize: 20, marginStart: 7}}>Unknown</Text>
+              </ListItem>
+              <ListItem>
+                <CheckBox
+                  onPress={() =>
+                    this.setState({
                       clientData: {...this.state.clientData, risk: 'l'},
                     })
                   }
