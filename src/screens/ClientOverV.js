@@ -29,11 +29,36 @@ import {
   bordered,
   Label,
   View,
+  DeckSwiper,
 } from 'native-base';
 import CSHeader from '../components/CSHeader';
-import {TouchableOpacity} from 'react-native';
-
+import {TouchableOpacity, SafeAreaView, FlatList, List} from 'react-native';
+import {LineChart, Grid, YAxis} from 'react-native-svg-charts';
+import {Defs, LinearGradient, Stop} from 'react-native-svg';
+import GradientCard from 'react-native-gradient-card-view';
+import {ScreenWidth} from '@freakycoder/react-native-helpers';
+// Static Data
+import staticData2 from './data/staticData2';
+import styles, {centerSubtitleStyle} from './assets/styles';
 import {getClientData} from '../services/DatabaseServices';
+
+const cards = [
+  {
+    text: '5 Day',
+    name: 'Relationship Manager: Dr. Georgie Powell',
+    data: [88, 72, 89, 77, 78, 83, 85, 88, 91, 96, 92, 95, 99, 100, 103],
+  },
+  {
+    text: '3 Month',
+    name: 'Relationship Manager: Dr. Georgie Powell',
+    data: [83, 88, 85, 80, 63, 70, 75, 75, 81, 85, 88, 92, 94, 97, 103],
+  },
+  {
+    text: '1 Year',
+    name: 'Relationship Manager: Dr. Georgie Powell',
+    data: [10, 15, 16, 43, 52, 48, 75, 72, 86, 82, 63, 76, 88, 92, 103],
+  },
+];
 
 export default class ClientOverV extends Component {
   constructor(props) {
@@ -42,6 +67,12 @@ export default class ClientOverV extends Component {
       selected: 'key1',
       clientData: '',
       isLoading: true,
+      page: 1,
+      seed: 1,
+      query: '',
+      refreshing: false,
+      dataBackup: staticData2,
+      dataSource: staticData2,
     };
   }
   onValueChange(value) {
@@ -68,16 +99,56 @@ export default class ClientOverV extends Component {
     selectedRisk: 0,
   };
 
+  renderRightComponent = item => (
+    <View>
+      <LineChart
+        data={item.data}
+        style={styles.chartStyle}
+        contentInset={styles.chartContentInset}
+        svg={{
+          strokeWidth: 1.5,
+          fill: item.fillColor,
+          stroke: item.strokeColor,
+        }}
+      />
+    </View>
+  );
+
+  renderItem(item) {
+    return (
+      <GradientCard
+        key={item.name}
+        title={item.name}
+        style={styles.cardStyle}
+        imageSource={item.image}
+        centerTitle={item.value}
+        subtitle={item.shortName}
+        width={ScreenWidth * 0.9}
+        centerSubtitle={item.change}
+        shadowStyle={styles.cardShadowStyle}
+        centerSubtitleStyle={centerSubtitleStyle(item)}
+        rightComponent={this.renderRightComponent(item)}
+      />
+    );
+  }
+
+  state = {
+    activePage: 1,
+  };
+
+  selectComponent = activePage => () => this.setState({activePage});
+
   render() {
-    const line = {
-      labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-      datasets: [
-        {
-          data: [20, 45, 28, 80, 99, 43],
-          strokeWidth: 2, // optional
-        },
-      ],
-    };
+    const contentInset = {top: 20, bottom: 17};
+    const date = [10, 15, 16, 43, 52, 48, 75, 72, 86, 82, 63, 76, 88, 92, 103];
+    const Gradient = () => (
+      <Defs key={'gradient'}>
+        <LinearGradient id={'gradient'} x1={'0'} y={'0%'} x2={'100%'} y2={'0%'}>
+          <Stop offset={'0%'} stopColor={'rgb(134, 65, 244)'} />
+          <Stop offset={'100%'} stopColor={'rgb(66, 194, 244)'} />
+        </LinearGradient>
+      </Defs>
+    );
 
     return (
       <Container>
@@ -209,30 +280,78 @@ export default class ClientOverV extends Component {
 
           <Tab heading="Execution" activeTextStyle={{color: '#103662'}}>
             <Content>
-              <Card transparent style={{height: 200}}>
-                <CardItem>
-                  <Text
-                    style={{
-                      fontSize: 20,
-                      fontWeight: 'bold',
-                      color: '#103662',
-                    }}>
-                    Portfolio Overview
-                  </Text>
-                </CardItem>
-              </Card>
-              <Card transparent style={{height: 200}}>
-                <CardItem>
-                  <Text
-                    style={{
-                      fontSize: 20,
-                      fontWeight: 'bold',
-                      color: '#103662',
-                    }}>
-                    Securities
-                  </Text>
-                </CardItem>
-              </Card>
+              <View style={styles.safeAreaViewStyle}>
+                <DeckSwiper
+                  dataSource={cards}
+                  renderItem={item => (
+                    <Card style={{elevation: 3}}>
+                      <CardItem>
+                        <Left>
+                          <Text
+                            style={{
+                              fontSize: 20,
+                              fontWeight: 'bold',
+                              color: '#103662',
+                            }}>
+                            Portfolio Overview
+                          </Text>
+                          <Button
+                          transparent
+                          style={{
+                            marginStart: 10,
+                          }}>
+                          <Text style={{color: '#103662'}}>{item.text}</Text>
+                        </Button>
+                        </Left>
+                      </CardItem>
+                      <CardItem cardBody>
+                        <YAxis
+                          data={item.data}
+                          contentInset={contentInset}
+                          svg={{
+                            fill: 'grey',
+                            fontSize: 10,
+                          }}
+                          numberOfTicks={10}
+                          formatLabel={value => `£${value}M`}
+                        />
+                        <LineChart
+                          style={{height: 200, width: 400, left: 20}}
+                          data={item.data}
+                          contentInset={{top: 20, bottom: 17}}
+                          svg={{
+                            strokeWidth: 2,
+                            stroke: 'url(#gradient)',
+                          }}>
+                          <Grid />
+                          <Gradient />
+                        </LineChart>
+                      </CardItem>
+                      
+                    </Card>
+                  )}
+                />
+              </View>
+              <View
+                style={{
+                  marginTop: 270,
+                }}>
+                  <Card style={{height:200}}>
+                    <CardItem>
+                    <Text
+                          style={{
+                            fontSize: 20,
+                            fontWeight: 'bold',
+                            color: '#103662',
+                          }}>
+                          Securities
+                        </Text>
+                    </CardItem>
+                    <CardItem>
+                      <Text>Securities go here</Text>
+                    </CardItem>
+                  </Card>
+              </View>
             </Content>
           </Tab>
 
@@ -560,7 +679,7 @@ export default class ClientOverV extends Component {
                   color="#103662"
                   onPress={() => this.setState({selectedDoc: 1})}
                 />
-                <Text style={{fontSize:20, marginStart:7}}>Yes</Text>
+                <Text style={{fontSize: 20, marginStart: 7}}>Yes</Text>
               </ListItem>
               <ListItem>
                 <CheckBox
@@ -568,7 +687,7 @@ export default class ClientOverV extends Component {
                   color="#103662"
                   onPress={() => this.setState({selectedDoc: 2})}
                 />
-                <Text style={{fontSize:20, marginStart:7}}>No</Text>
+                <Text style={{fontSize: 20, marginStart: 7}}>No</Text>
               </ListItem>
               <Text
                 style={{
@@ -585,7 +704,7 @@ export default class ClientOverV extends Component {
                   color="#103662"
                   onPress={() => this.setState({selectedPap: 1})}
                 />
-                <Text style={{fontSize:20, marginStart:7}}>Yes</Text>
+                <Text style={{fontSize: 20, marginStart: 7}}>Yes</Text>
               </ListItem>
               <ListItem>
                 <CheckBox
@@ -593,7 +712,7 @@ export default class ClientOverV extends Component {
                   color="#103662"
                   onPress={() => this.setState({selectedPap: 2})}
                 />
-                <Text style={{fontSize:20, marginStart:7}}>No</Text>
+                <Text style={{fontSize: 20, marginStart: 7}}>No</Text>
               </ListItem>
               <Text
                 style={{
@@ -610,7 +729,7 @@ export default class ClientOverV extends Component {
                   color="#103662"
                   onPress={() => this.setState({selectedRisk: 1})}
                 />
-                <Text style={{fontSize:20, marginStart:7}}>High</Text>
+                <Text style={{fontSize: 20, marginStart: 7}}>High</Text>
               </ListItem>
               <ListItem>
                 <CheckBox
@@ -618,7 +737,7 @@ export default class ClientOverV extends Component {
                   color="#103662"
                   onPress={() => this.setState({selectedRisk: 2})}
                 />
-                <Text style={{fontSize:20, marginStart:7}}>Medium</Text>
+                <Text style={{fontSize: 20, marginStart: 7}}>Medium</Text>
               </ListItem>
               <ListItem>
                 <CheckBox
@@ -626,7 +745,7 @@ export default class ClientOverV extends Component {
                   color="#103662"
                   onPress={() => this.setState({selectedRisk: 3})}
                 />
-                <Text style={{fontSize:20, marginStart:7}}>Low</Text>
+                <Text style={{fontSize: 20, marginStart: 7}}>Low</Text>
               </ListItem>
               <Right>
                 <Button
