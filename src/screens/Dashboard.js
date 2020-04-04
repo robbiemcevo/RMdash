@@ -16,6 +16,9 @@ import {
   Right,
 } from 'native-base';
 
+
+
+
 import {useNavigation} from '@react-navigation/native';
 import CSHeader from '../components/CSHeader';
 export default class UpcomingEvents extends Component {
@@ -190,6 +193,7 @@ export default class UpcomingEvents extends Component {
               </CardItem>
             ))}
           </Card>
+          
         </Content>
       </Container>
     );
