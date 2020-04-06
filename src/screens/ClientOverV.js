@@ -40,13 +40,13 @@ import {ScreenWidth} from '@freakycoder/react-native-helpers';
 // Static Data
 import staticData2 from './data/staticData2';
 import styles, {centerSubtitleStyle} from './assets/styles';
-import {getClientData} from '../services/DatabaseServices';
+import {getClientData, getPortfolioData} from '../services/DatabaseServices';
 
 const cards = [
   {
     text: '5 Day',
     name: 'Relationship Manager: Dr. Georgie Powell',
-    data: [88, 72, 89, 77, 78, 83, 85, 88, 91, 96, 92, 95, 99, 100, 103],
+    data: [88, 72, 89, 77, 78, 83, 85, 88, 91, 96, 92, 95, 99, 50, 110],
   },
   {
     text: '3 Month',
@@ -73,6 +73,7 @@ export default class ClientOverV extends Component {
       refreshing: false,
       dataBackup: staticData2,
       dataSource: staticData2,
+      portfolioValue: []
     };
   }
   onValueChange(value) {
@@ -86,7 +87,110 @@ export default class ClientOverV extends Component {
     let data = await getClientData(this.props.route.params.client_id);
     this.setState({clientData: data});
 
+    let portfolioData = await getPortfolioData(this.props.route.params.client_id, 'EXE');
+    let portfolioValue = await this.getPortfolioValueOverTime(portfolioData);
+
+    this.setState({portfolioValue: [{
+      text: '5 Day',
+      name: 'Relationship Manager: Dr. Georgie Powell',
+      data: portfolioValue,
+    }]});
     //console.log(this.state.clientData);
+  }
+
+  formatDate(date) {
+    let d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) 
+        month = '0' + month;
+    if (day.length < 2) 
+        day = '0' + day;
+
+    return [year, month, day].join('-');
+  }
+
+  getPortfolioValueOverTime(portfolioData) {
+
+    let value = portfolioData.info.initial_value;
+    let valueOverTime = [];
+    let securitiesOwnedAtTime = [];
+    let startDate = new Date(2019, 7, 1);
+    let endDate = new Date(2019, 11, 31);
+
+    console.log("================get portfolio value started =======================");
+    console.log("");
+
+    for (let d = startDate; d <= endDate; d.setDate(d.getDate() + 1)) {
+
+      //Update value of owned securities
+      //valueOld = price * amount
+      //valueNew = priceOld * amount
+      //changeInValue = | valueNew - valueOld |
+      console.log(this.formatDate(new Date(d)));
+      portfolioData.securityPrice.forEach(price => {
+        if(price.date === this.formatDate(new Date(d))) {
+          console.log(price.security_price_id + " " + price.security_code + " " + price.price);
+          if(securitiesOwnedAtTime[price.security_code] !== undefined) {
+
+            let priceOldValue = 0;
+
+            portfolioData.securityPrice.forEach(priceOld => {
+              if(priceOld.date < this.formatDate(new Date(d)) && priceOld.security_code === price.security_code) {
+                //Take only the last value of forEach
+                priceOldValue = priceOld.price;
+              }
+            });
+
+            let valueNew = price.price * securitiesOwnedAtTime[price.security_code];
+            let valueOld = priceOldValue * securitiesOwnedAtTime[price.security_code];
+            let changeInValue = Math.abs(valueNew - valueOld);
+
+            console.info("Previous portfolio value: " + value);
+
+            if(valueNew > valueOld) {
+              value += changeInValue;
+            } else {
+              value -= changeInValue;
+            }
+
+            console.log("Change in value: " + changeInValue + " Security price old: " + priceOldValue + " Price new: " + price.price);
+
+            console.log("Portfolio value: " + value);
+
+          }
+        }
+      });
+
+      //Update securities owned
+      portfolioData.trading.forEach(activity => {
+
+        if(activity.date === this.formatDate(new Date(d))) {
+          console.log(activity.trading_activity_id + " " + activity.security_code + " " + activity.amount + " " + activity.date + " " + activity.type);
+
+          if(activity.type === 'BUY') {
+
+            if(securitiesOwnedAtTime[activity.security_code] === undefined) {
+              securitiesOwnedAtTime[activity.security_code] = activity.amount;
+            } else {
+              securitiesOwnedAtTime[activity.security_code] += activity.amount;
+            }
+  
+          } else {
+            securitiesOwnedAtTime[activity.security_code] -= activity.amount;
+          }
+        }
+
+      });
+
+      valueOverTime.push(value);
+      
+    }
+
+    return valueOverTime;
+
   }
 
   state = {
@@ -282,7 +386,7 @@ export default class ClientOverV extends Component {
             <Content>
               <View style={styles.safeAreaViewStyle}>
                 <DeckSwiper
-                  dataSource={cards}
+                  dataSource={this.state.portfolioValue}
                   renderItem={item => (
                     <Card style={{elevation: 3}}>
                       <CardItem>

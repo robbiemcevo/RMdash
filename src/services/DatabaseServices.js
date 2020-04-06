@@ -54,3 +54,20 @@ export async function getUserRegistrationInfo() {
     console.error(e);
   }
 }
+export async function getPortfolioData(client_id, portfolio_type) {
+  try {
+    const success = await firebase.functions().httpsCallable('getClientPortfolioInfo')(
+      {client_id: client_id, portfolio_type: portfolio_type},
+    );
+
+    if (success) {
+      let data = success.data;
+      console.log(data);
+      return data;
+    } else {
+      console.warn('Woops, looks like something went wrong!');
+    }
+  } catch (e) {
+    console.error(e);
+  }
+}
