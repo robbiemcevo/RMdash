@@ -278,7 +278,7 @@ export default class ClientOverV extends Component {
             </Content>
           </Tab>
 
-          <Tab heading="Documents" activeTextStyle={{color: '#103662'}} tabStyle={{backgroundColor:'light'}} activeTabStyle={{backgroundColor:'light'}}>
+          <Tab heading="Details" activeTextStyle={{color: '#103662'}} tabStyle={{backgroundColor:'light'}} activeTabStyle={{backgroundColor:'light'}}>
             <Content padder>
               <Text
                 style={{
