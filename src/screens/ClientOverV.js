@@ -81,8 +81,9 @@ export default class ClientOverV extends Component {
 
     return (
       <Container>
-        <Tabs tabBarUnderlineStyle={{backgroundColor: '#103662', height: 4}}>
-          <Tab heading="Overview" activeTextStyle={{color: '#103662'}}>
+        <Tabs tabBarUnderlineStyle={{backgroundColor: '#103662', height: 4}}
+        tabBarBackgroundColor='#103662'>
+          <Tab heading="Overview" activeTextStyle={{color: '#103662'}} tabStyle={{backgroundColor:'light'}} activeTabStyle={{backgroundColor:'light'}}>
             <Content padder>
               <Card transparent>
                 <CardItem>
@@ -111,13 +112,13 @@ export default class ClientOverV extends Component {
               <Card transparent>
                 <CardItem>
                   <Body>
-                    <Text style={{fontSize: 20}}>
+                    <Text style={{fontSize: 20, color:'back'}}>
                       Client ID: {this.state.clientData.client_id}
                     </Text>
-                    <Text style={{fontSize: 20}}>
+                    <Text style={{fontSize: 20, color:'back'}}>
                       Address: {this.state.clientData.domicile}
                     </Text>
-                    <Text style={{fontSize: 20}}>
+                    <Text style={{fontSize: 20, color:'back'}}>
                       Phone No.: {this.state.clientData.phone_number}
                     </Text>
                   </Body>
@@ -126,8 +127,8 @@ export default class ClientOverV extends Component {
               <Card transparent>
                 <CardItem>
                   <Body>
-                    <Text style={{fontSize: 20}}>Total Net Assets</Text>
-                    <Text style={{fontSize: 20}}>GDP</Text>
+                    <Text style={{fontSize: 20, color:'back'}}>Total Net Assets</Text>
+                    <Text style={{fontSize: 20, color:'back'}}>GDP</Text>
                     <Text
                       style={{
                         fontSize: 90,
@@ -188,16 +189,16 @@ export default class ClientOverV extends Component {
                       </Text>
                     </Button>
                     <Body>
-                      <Text style={{fontSize: 20}}>Meeting with Elon</Text>
-                      <Text style={{fontSize: 20}}>Credit Suisse Office</Text>
-                      <Text style={{fontSize: 20}}>5pm - 7pm</Text>
+                      <Text style={{fontSize: 20, color:'back'}}>Meeting with Elon</Text>
+                      <Text style={{fontSize: 20, color:'back'}}>Credit Suisse Office</Text>
+                      <Text style={{fontSize: 20, color:'back'}}>5pm - 7pm</Text>
                     </Body>
                   </Left>
                 </CardItem>
                 <CardItem>
                   <Body>
-                    <Text style={{fontSize: 20}}>- EXT.1 up by 0.8%</Text>
-                    <Text style={{fontSize: 20}}>
+                    <Text style={{fontSize: 20, color:'back'}}>- EXT.1 up by 0.8%</Text>
+                    <Text style={{fontSize: 20, color:'back'}}>
                       - FTSE down by 1.7%{' '}
                       <Icon name="alert" style={{fontSize: 30, color: 'red'}} />
                     </Text>
@@ -207,7 +208,7 @@ export default class ClientOverV extends Component {
             </Content>
           </Tab>
 
-          <Tab heading="Execution" activeTextStyle={{color: '#103662'}}>
+          <Tab heading="Execution" activeTextStyle={{color: '#103662'}} tabStyle={{backgroundColor:'light'}} activeTabStyle={{backgroundColor:'light'}}>
             <Content>
               <Card transparent style={{height: 200}}>
                 <CardItem>
@@ -236,7 +237,7 @@ export default class ClientOverV extends Component {
             </Content>
           </Tab>
 
-          <Tab heading="Advisory" activeTextStyle={{color: '#103662'}}>
+          <Tab heading="Advisory" activeTextStyle={{color: '#103662'}} tabStyle={{backgroundColor:'light'}} activeTabStyle={{backgroundColor:'light'}}>
             <Content>
               <Card transparent style={{height: 200}}>
                 <CardItem>
@@ -277,7 +278,7 @@ export default class ClientOverV extends Component {
             </Content>
           </Tab>
 
-          <Tab heading="Documents" activeTextStyle={{color: '#103662'}}>
+          <Tab heading="Documents" activeTextStyle={{color: '#103662'}} tabStyle={{backgroundColor:'light'}} activeTabStyle={{backgroundColor:'light'}}>
             <Content padder>
               <Text
                 style={{
@@ -305,7 +306,7 @@ export default class ClientOverV extends Component {
                 First Name
               </Text>
               <Item rounded style={{marginTop: 10}}>
-                <Input style={{fontSize: 20, marginStart: 7}}
+                <Input style={{fontSize: 20, marginStart: 7, color:'back'}}
                 onChangeText={text => this.setState({
                   clientData: {
                     ...this.state.clientData,
@@ -324,7 +325,7 @@ export default class ClientOverV extends Component {
                 Last Name
               </Text>
               <Item rounded style={{marginTop: 10}}>
-              <Input style={{fontSize: 20, marginStart: 7}}
+              <Input style={{fontSize: 20, marginStart: 7, color:'back'}}
                 onChangeText={text => this.setState({
                   clientData: {
                     ...this.state.clientData,
@@ -343,7 +344,7 @@ export default class ClientOverV extends Component {
                 Email
               </Text>
               <Item rounded style={{marginTop: 10}}>
-              <Input style={{fontSize: 20, marginStart: 7}}
+              <Input style={{fontSize: 20, marginStart: 7, color:'back'}}
                 onChangeText={text => this.setState({
                   clientData: {
                     ...this.state.clientData,
@@ -362,7 +363,7 @@ export default class ClientOverV extends Component {
                 Phone Number
               </Text>
               <Item rounded style={{marginTop: 10}}>
-              <Input style={{fontSize: 20, marginStart: 7}}
+              <Input style={{fontSize: 20, marginStart: 7, color:'back'}}
                 onChangeText={text => this.setState({
                   clientData: {
                     ...this.state.clientData,
@@ -393,7 +394,7 @@ export default class ClientOverV extends Component {
                 Date of Birth
               </Text>
               <Item rounded style={{marginTop: 10}}>
-              <Input style={{fontSize: 20, marginStart: 7}}
+              <Input style={{fontSize: 20, marginStart: 7, color:'back'}}
                 onChangeText={text => this.setState({
                   clientData: {
                     ...this.state.clientData,
@@ -412,7 +413,7 @@ export default class ClientOverV extends Component {
                 Residential Adress
               </Text>
               <Item rounded style={{marginTop: 10}}>
-              <Input style={{fontSize: 20, marginStart: 7}}
+              <Input style={{fontSize: 20, marginStart: 7, color:'back'}}
                 onChangeText={text => this.setState({
                   clientData: {
                     ...this.state.clientData,
@@ -431,7 +432,7 @@ export default class ClientOverV extends Component {
                 Mailing Adress
               </Text>
               <Item rounded style={{marginTop: 10}}>
-              <Input style={{fontSize: 20, marginStart: 7}}
+              <Input style={{fontSize: 20, marginStart: 7, color:'back'}}
                 onChangeText={text => this.setState({
                   clientData: {
                     ...this.state.clientData,
@@ -450,7 +451,7 @@ export default class ClientOverV extends Component {
                 Nationality
               </Text>
               <Item rounded style={{marginTop: 10}}>
-              <Input style={{fontSize: 20, marginStart: 7}}
+              <Input style={{fontSize: 20, marginStart: 7, color:'back'}}
                 onChangeText={text => this.setState({
                   clientData: {
                     ...this.state.clientData,
@@ -469,7 +470,7 @@ export default class ClientOverV extends Component {
                 Reporting Language
               </Text>
               <Item rounded style={{marginTop: 10}}>
-              <Input style={{fontSize: 20, marginStart: 7}}
+              <Input style={{fontSize: 20, marginStart: 7, color:'back'}}
                 onChangeText={text => this.setState({
                   clientData: {
                     ...this.state.clientData,
@@ -488,7 +489,7 @@ export default class ClientOverV extends Component {
                 Reporting Currency
               </Text>
               <Item rounded style={{marginTop: 10}}>
-              <Input style={{fontSize: 20, marginStart: 7}}
+              <Input style={{fontSize: 20, marginStart: 7, color:'back'}}
                 onChangeText={text => this.setState({
                   clientData: {
                     ...this.state.clientData,
@@ -507,7 +508,7 @@ export default class ClientOverV extends Component {
                 Transit Account Holder
               </Text>
               <Item rounded style={{marginTop: 10}}>
-              <Input style={{fontSize: 20, marginStart: 7}}
+              <Input style={{fontSize: 20, marginStart: 7, color:'back'}}
                 onChangeText={text => this.setState({
                   clientData: {
                     ...this.state.clientData,
@@ -526,7 +527,7 @@ export default class ClientOverV extends Component {
                 Transit Account Number
               </Text>
               <Item rounded style={{marginTop: 10}}>
-              <Input style={{fontSize: 20, marginStart: 7}}
+              <Input style={{fontSize: 20, marginStart: 7, color:'back'}}
                 onChangeText={text => this.setState({
                   clientData: {
                     ...this.state.clientData,
@@ -545,7 +546,7 @@ export default class ClientOverV extends Component {
                 Sector
               </Text>
               <Item rounded style={{marginTop: 10}}>
-              <Input style={{fontSize: 20, marginStart: 7}}
+              <Input style={{fontSize: 20, marginStart: 7, color:'back'}}
                 onChangeText={text => this.setState({
                   clientData: {
                     ...this.state.clientData,
@@ -564,7 +565,7 @@ export default class ClientOverV extends Component {
                 Source of Wealth
               </Text>
               <Item rounded style={{marginTop: 10}}>
-              <Input style={{fontSize: 20, marginStart: 7}}
+              <Input style={{fontSize: 20, marginStart: 7, color:'back'}}
                 onChangeText={text => this.setState({
                   clientData: {
                     ...this.state.clientData,
@@ -595,7 +596,7 @@ export default class ClientOverV extends Component {
                     })
                   }
                 />
-                <Text style={{fontSize: 20, marginStart: 7}}>Private</Text>
+                <Text style={{fontSize: 20, marginStart: 7, color:'back'}}>Private</Text>
               </ListItem>
               <ListItem>
                 <CheckBox
@@ -610,7 +611,7 @@ export default class ClientOverV extends Component {
                     })
                   }
                 />
-                <Text style={{fontSize: 20, marginStart: 7}}>Professional</Text>
+                <Text style={{fontSize: 20, marginStart: 7, color:'back'}}>Professional</Text>
               </ListItem>
               <Text
                 style={{
@@ -634,7 +635,7 @@ export default class ClientOverV extends Component {
                     })
                   }
                 />
-                <Text style={{fontSize: 20, marginStart: 7}}>Clear</Text>
+                <Text style={{fontSize: 20, marginStart: 7, color:'back'}}>Clear</Text>
               </ListItem>
               <ListItem>
                 <CheckBox
@@ -649,7 +650,7 @@ export default class ClientOverV extends Component {
                     })
                   }
                 />
-                <Text style={{fontSize: 20, marginStart: 7}}>In Progress</Text>
+                <Text style={{fontSize: 20, marginStart: 7, color:'back'}}>In Progress</Text>
               </ListItem>
               <ListItem>
                 <CheckBox
@@ -664,7 +665,7 @@ export default class ClientOverV extends Component {
                     })
                   }
                 />
-                <Text style={{fontSize: 20, marginStart: 7}}>Not Done</Text>
+                <Text style={{fontSize: 20, marginStart: 7, color:'back'}}>Not Done</Text>
               </ListItem>
               <ListItem>
                 <CheckBox
@@ -679,7 +680,7 @@ export default class ClientOverV extends Component {
                     })
                   }
                 />
-                <Text style={{fontSize: 20, marginStart: 7}}>Problematic</Text>
+                <Text style={{fontSize: 20, marginStart: 7, color:'back'}}>Problematic</Text>
               </ListItem>
               <Text
                 style={{
@@ -705,7 +706,7 @@ export default class ClientOverV extends Component {
                     })
                   }
                 />
-                <Text style={{fontSize: 20, marginStart: 7}}>Yes</Text>
+                <Text style={{fontSize: 20, marginStart: 7, color:'back'}}>Yes</Text>
               </ListItem>
               <ListItem>
                 <CheckBox
@@ -722,7 +723,7 @@ export default class ClientOverV extends Component {
                     })
                   }
                 />
-                <Text style={{fontSize: 20, marginStart: 7}}>No</Text>
+                <Text style={{fontSize: 20, marginStart: 7, color:'back'}}>No</Text>
               </ListItem>
               <Text
                 style={{
@@ -746,7 +747,7 @@ export default class ClientOverV extends Component {
                     })
                   }
                 />
-                <Text style={{fontSize: 20, marginStart: 7}}>Yes</Text>
+                <Text style={{fontSize: 20, marginStart: 7, color:'back'}}>Yes</Text>
               </ListItem>
               <ListItem>
                 <CheckBox
@@ -761,7 +762,7 @@ export default class ClientOverV extends Component {
                     })
                   }
                 />
-                <Text style={{fontSize: 20, marginStart: 7}}>No</Text>
+                <Text style={{fontSize: 20, marginStart: 7, color:'back'}}>No</Text>
               </ListItem>
               <Text
                 style={{
@@ -782,7 +783,7 @@ export default class ClientOverV extends Component {
                   checked={this.state.clientData.risk === 'u'}
                   color="#103662"
                 />
-                <Text style={{fontSize: 20, marginStart: 7}}>Unknown</Text>
+                <Text style={{fontSize: 20, marginStart: 7, color:'back'}}>Unknown</Text>
               </ListItem>
               <ListItem>
                 <CheckBox
@@ -794,7 +795,7 @@ export default class ClientOverV extends Component {
                   checked={this.state.clientData.risk === 'l'}
                   color="#103662"
                 />
-                <Text style={{fontSize: 20, marginStart: 7}}>High</Text>
+                <Text style={{fontSize: 20, marginStart: 7, color:'back'}}>High</Text>
               </ListItem>
               <ListItem>
                 <CheckBox
@@ -806,7 +807,7 @@ export default class ClientOverV extends Component {
                   checked={this.state.clientData.risk === 'm'}
                   color="#103662"
                 />
-                <Text style={{fontSize: 20, marginStart: 7}}>Medium</Text>
+                <Text style={{fontSize: 20, marginStart: 7, color:'back'}}>Medium</Text>
               </ListItem>
               <ListItem>
                 <CheckBox
@@ -818,7 +819,7 @@ export default class ClientOverV extends Component {
                   checked={this.state.clientData.risk === 's'}
                   color="#103662"
                 />
-                <Text style={{fontSize: 20, marginStart: 7}}>Low</Text>
+                <Text style={{fontSize: 20, marginStart: 7, color:'back'}}>Low</Text>
               </ListItem>
               <Right>
                 <Button
