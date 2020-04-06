@@ -1,0 +1,69 @@
+INSTRUCTIONS
+
+In terminal:
+npm install -g firebase-tools
+then
+npx firebase init functions
+-Choose csrmdash from firebase options
+-Say yes to npm and Javascript, say no to ESlint
+
+Go to firebase, project settings, service accounts and generate private key, place in RMDash
+
+go to functions folder and index.js, copy and paste this code:
+
+const functions = require('firebase-functions');
+
+var admin = require('firebase-admin');
+
+admin.initializeApp();
+
+exports.foo = functions.database
+  .ref('/values/{company}/change')
+  .onUpdate((snapshot, context) => {
+    const before = snapshot.before.val();
+    const after = snapshot.after.val();
+    const ok = snapshot.before.ref.parent;
+    console.log(`Database URL is ${ok}`);
+
+    var ref = admin.database().refFromURL(`${ok}`);
+
+    ref
+      .once('value')
+      .then(function (snapshot) {
+        const intendedCode = snapshot.child('companycode').val();
+        console.log(`Company code is ${intendedCode}`);
+        let statusMessage =
+          intendedCode + ` has changed from ${before} to ${after}`;
+
+        var registrationToken =
+          'dEJXX9yoQ9yxNEgZCzScsh:APA91bGIIAPL43G3SvDisoEbuYNjdtW6Qi6pf-Wg1AZk9hUR08T25TUAAn-PM85nIPiG7ax5JmS06dN_uo9KuS4vvXckfVQ6PSfkDJdRo3hVdsbJTQGpol5EjL69MDeT8sLrx-DKydhN';
+
+        var message = {
+          notification: {
+            title: 'ALERT',
+            body: statusMessage,
+          },
+          token: registrationToken,
+        };
+
+        admin
+          .messaging()
+          .send(message)
+          .then((response) => {
+            console.log('Message sent successfully:', response);
+            return response;
+          })
+          .catch((error) => {
+            console.log('Error sending message: ', error);
+          });
+        return statusMessage;
+      })
+      .catch((wrong) => {
+        console.log('Error reading data: ', wrong);
+      });
+  });
+
+
+if running in visual studio for ANDROID, you will need to install 'logcat' extension (i got the one from 'abhiagr'). will need to delete rmdash off your phone and reinstall. press ctrl+l ctrl+s to start logcat and search for 'token' as the app is installing. Find line of code that says NEW TOKEN: copy and paste that and replace the registrationToken variable in index.js.
+
+end logcat with ctrl+l and ctrl+e then go the database in firebase and change a value in the 'change' row of any value and you should receive notification. 
