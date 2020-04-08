@@ -56,7 +56,7 @@ export async function getUserRegistrationInfo() {
 }
 export async function getPortfolioData(client_id, portfolio_type) {
   try {
-    const success = await firebase.functions().httpsCallable('getClientPortfolioInfo')(
+    const success = await firebase.app().functions('europe-west1').httpsCallable('getClientPortfolioInfo')(
       {client_id: client_id, portfolio_type: portfolio_type},
     );
 

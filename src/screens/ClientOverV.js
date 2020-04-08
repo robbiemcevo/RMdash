@@ -83,11 +83,11 @@ export default class ClientOverV extends Component {
   }
 
   async componentDidMount() {
-    console.log(this.props.route.params.client_id);
-    let data = await getClientData(this.props.route.params.client_id);
+
+    let [data, portfolioData] = await Promise.all([getClientData(this.props.route.params.client_id), getPortfolioData(this.props.route.params.client_id, 'EXE')]);
+
     this.setState({clientData: data});
 
-    let portfolioData = await getPortfolioData(this.props.route.params.client_id, 'EXE');
     let portfolioValue = await this.getPortfolioValueOverTime(portfolioData);
 
     this.setState({portfolioValue: [{
