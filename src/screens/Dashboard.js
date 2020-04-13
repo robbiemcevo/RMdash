@@ -14,10 +14,9 @@ import {
   Title,
   Thumbnail,
   Right,
+  ListItem,
+  CheckBox,
 } from 'native-base';
-
-
-
 
 import {useNavigation} from '@react-navigation/native';
 import CSHeader from '../components/CSHeader';
@@ -31,14 +30,36 @@ export default class UpcomingEvents extends Component {
       items: [],
     };
   }
+
+  state = {
+    selectedNews: 0,
+  };
+
   componentDidMount() {
     this._isMounted = true;
 
-    var url =
-      'https://newsapi.org/v2/top-headlines?' +
-      'country=gb&' +
-      'pageSize=3&' +
-      'apiKey=9cb1bba31aa54d038eb01b75da21cd94';
+
+    if (this.state.selectedNews === 1) {
+      var url =
+        'https://newsapi.org/v2/top-headlines?' +
+        'country=gb&' +
+        'pageSize=3&' +
+        'apiKey=9cb1bba31aa54d038eb01b75da21cd94';
+    }
+    if (this.state.selectedNews === 2) {
+      var url =
+        'https://newsapi.org/v2/top-headlines?' +
+        'country=us&' +
+        'pageSize=3&' +
+        'apiKey=9cb1bba31aa54d038eb01b75da21cd94';
+    }
+    else {
+      var url =
+        'https://newsapi.org/v2/top-headlines?' +
+        'country=gb&' +
+        'pageSize=3&' +
+        'apiKey=9cb1bba31aa54d038eb01b75da21cd94';
+    }
 
     fetch(url)
       .then(res => res.json())
@@ -64,6 +85,7 @@ export default class UpcomingEvents extends Component {
   componentWillUnmount() {
     this._isMounted = false;
   }
+
   render() {
     const {error, isLoaded, items} = this.state;
     const pageTitle = 'Dashboard';
@@ -95,14 +117,14 @@ export default class UpcomingEvents extends Component {
                     borderStartWidth: 1.5,
                     borderEndWidth: 1.5,
                     borderTopWidth: 1.5,
-                    borderBottomWidth: 1.5
+                    borderBottomWidth: 1.5,
                   }}>
                   <Text
                     style={{
                       fontSize: 20,
                       textAlign: 'center',
                       color: '#103667',
-                      fontWeight: '500'
+                      fontWeight: '500',
                     }}>
                     {' '}
                     09 APR
@@ -124,7 +146,7 @@ export default class UpcomingEvents extends Component {
                     borderStartWidth: 1.5,
                     borderEndWidth: 1.5,
                     borderTopWidth: 1.5,
-                    borderBottomWidth: 1.5
+                    borderBottomWidth: 1.5,
                   }}>
                   <Text
                     style={{
@@ -169,7 +191,7 @@ export default class UpcomingEvents extends Component {
             </CardItem>
           </Card>
           <Card transparent style={{borderRadius: 8}}>
-          <CardItem
+            <CardItem
               header
               bordered
               style={{
@@ -180,6 +202,23 @@ export default class UpcomingEvents extends Component {
               <Text
                 style={{fontSize: 20, fontWeight: 'bold', color: '#103662'}}>
                 News
+              </Text>
+              
+              <CheckBox
+                checked={this.state.selectedNews === 1}
+                color="#103662"
+                onPress={() => this.setState({selectedNews: 1})}
+              />
+              <Text style={{fontSize: 15, marginStart: 15, color: 'back'}}>
+                UK
+              </Text>
+              <CheckBox
+                checked={this.state.selectedNews === 2}
+                color="#103662"
+                onPress={() => this.setState({selectedNews: 2})}
+              />
+              <Text style={{fontSize: 15, marginStart: 15, color: 'back'}}>
+                USA
               </Text>
             </CardItem>
             {items.map(item => (
@@ -193,7 +232,6 @@ export default class UpcomingEvents extends Component {
               </CardItem>
             ))}
           </Card>
-          
         </Content>
       </Container>
     );
