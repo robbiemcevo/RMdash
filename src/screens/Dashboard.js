@@ -28,38 +28,45 @@ export default class UpcomingEvents extends Component {
       error: null,
       isLoaded: false,
       items: [],
+      clientData: '',
     };
   }
 
   state = {
-    selectedNews: 0,
+    news: 'gb',
   };
 
-  componentDidMount() {
-    this._isMounted = true;
-
-
-    if (this.state.selectedNews === 1) {
+  newsAPI(news) {
+    if (news === 'gb') {
       var url =
         'https://newsapi.org/v2/top-headlines?' +
         'country=gb&' +
         'pageSize=3&' +
         'apiKey=9cb1bba31aa54d038eb01b75da21cd94';
     }
-    if (this.state.selectedNews === 2) {
+    if (news === 'us') {
       var url =
         'https://newsapi.org/v2/top-headlines?' +
         'country=us&' +
         'pageSize=3&' +
         'apiKey=9cb1bba31aa54d038eb01b75da21cd94';
-    }
-    else {
+    } else {
       var url =
         'https://newsapi.org/v2/top-headlines?' +
         'country=gb&' +
         'pageSize=3&' +
         'apiKey=9cb1bba31aa54d038eb01b75da21cd94';
     }
+  }
+
+  componentDidMount() {
+    this._isMounted = true;
+
+    var url =
+      'https://newsapi.org/v2/top-headlines?' +
+      'country=gb&' +
+      'pageSize=3&' +
+      'apiKey=9cb1bba31aa54d038eb01b75da21cd94';
 
     fetch(url)
       .then(res => res.json())
@@ -205,17 +212,17 @@ export default class UpcomingEvents extends Component {
               </Text>
               
               <CheckBox
-                checked={this.state.selectedNews === 1}
+                checked={this.state.news === 'gb'}
                 color="#103662"
-                onPress={() => this.setState({selectedNews: 1})}
+                onPress={() => this.setState({news: 'gb'})}
               />
               <Text style={{fontSize: 15, marginStart: 15, color: 'back'}}>
                 UK
               </Text>
               <CheckBox
-                checked={this.state.selectedNews === 2}
+                checked={this.state.news === 'us'}
                 color="#103662"
-                onPress={() => this.setState({selectedNews: 2})}
+                onPress={() => this.setState({news: 'us'})}
               />
               <Text style={{fontSize: 15, marginStart: 15, color: 'back'}}>
                 USA
