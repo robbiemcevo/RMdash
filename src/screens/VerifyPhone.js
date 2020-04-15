@@ -27,7 +27,11 @@ export default class VerifyPhone extends Component {
   }
 
   render() {
-    const phoneNum = this.props.route.params.userPhoneNumber;
+    let phoneNum = this.props.route.params.userPhoneNumber;
+    let firstThree = phoneNum.substr(0, 3);
+    let lastThreeNum = phoneNum.substr(phoneNum.length - 3);
+    phoneNum = firstThree + "*******" + lastThreeNum;
+
     const {code, errorMsg} = this.state;
     
     return (

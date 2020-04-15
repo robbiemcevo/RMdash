@@ -15,13 +15,57 @@
       },
       "oauth_client": [
         {
-          "client_id": "764913122919-1vqn6n00asurgd5mh4766m5ul2fg5sgq.apps.googleusercontent.com",
+          "client_id": "764913122919-lvkoduco5e685qa7296g04ivfb6um36q.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.creditsuisse.rmdash",
-            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+            "certificate_hash": "42d1bdf2e82bedc09ae9c8eacd676145fe9d540d"
           }
         },
+        {
+          "client_id": "764913122919-lb8mlcs9qmsmsjd4kdqagqu0brbavpqt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.creditsuisse.rmdash",
+            "certificate_hash": "ae952330fa6c3529e77adf1788724b9ac5950c65"
+          }
+        },
+        {
+          "client_id": "764913122919-i2dnadbucuevhn1347sti0pm6tbvns05.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDq3UVewQbKpQiY-5n_7ellH3KpNe1bVnI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "764913122919-i2dnadbucuevhn1347sti0pm6tbvns05.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "764913122919-im5uh7ql46o99aqs5um26nbn18fuah8k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.creditsuisse.rmdash"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:764913122919:android:d5fa3de4879fdad3bc5ec2",
+        "android_client_info": {
+          "package_name": "com.example"
+        }
+      },
+      "oauth_client": [
         {
           "client_id": "764913122919-i2dnadbucuevhn1347sti0pm6tbvns05.apps.googleusercontent.com",
           "client_type": 3
