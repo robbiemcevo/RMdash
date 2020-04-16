@@ -184,14 +184,12 @@ export default class ClientOverV extends Component {
                           color: '#103662',
                           fontWeight: 'bold',
                         }}>
-                        {' '}
-                        09 APR
+                        {this.state.clientData.event_date}
                       </Text>
                     </Button>
                     <Body>
-                      <Text style={{fontSize: 20, color:'back'}}>Meeting with Elon</Text>
-                      <Text style={{fontSize: 20, color:'back'}}>Credit Suisse Office</Text>
-                      <Text style={{fontSize: 20, color:'back'}}>5pm - 7pm</Text>
+                      <Text style={{fontSize: 20, color:'back'}}>{this.state.clientData.events}</Text>
+                      
                     </Body>
                   </Left>
                 </CardItem>

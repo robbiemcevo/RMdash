@@ -134,13 +134,13 @@ export default class UpcomingEvents extends Component {
                       fontWeight: '500',
                     }}>
                     {' '}
-                    09 APR
+                    29 APR
                   </Text>
                 </Button>
                 <Body>
-                  <Text style={{fontSize: 20}}>Meeting with Elon</Text>
+                  <Text style={{fontSize: 20}}>Meeting with Yagovkin Aleskeevich</Text>
                   <Text style={{fontSize: 20}}>Credit Suisse Office</Text>
-                  <Text style={{fontSize: 20}}>5pm - 7pm</Text>
+                  <Text style={{fontSize: 20}}>3pm - 5pm</Text>
                 </Body>
               </Left>
             </CardItem>
@@ -163,19 +163,20 @@ export default class UpcomingEvents extends Component {
                       fontWeight: '500',
                     }}>
                     {' '}
-                    10 JUN
+                    10 MAY
                   </Text>
                 </Button>
                 <Body>
-                  <Text style={{fontSize: 20}}>Product Training</Text>
-                  <Text style={{fontSize: 20}}>8am - 10am</Text>
+                  <Text style={{fontSize: 20}}>Meeting with Leon Charpentier</Text>
+                  <Text style={{fontSize: 20}}>West London</Text>
+                  <Text style={{fontSize: 20}}>1pm - 2pm</Text>
                 </Body>
               </Left>
             </CardItem>
           </Card>
-          <Card transparent style={{borderRadius: 8}}>
+          <Card transparent style={{borderRadius: 8, }}>
             <CardItem
-              header
+              header1
               bordered
               style={{
                 borderTopLeftRadius: 8,
@@ -197,7 +198,7 @@ export default class UpcomingEvents extends Component {
               </Body>
             </CardItem>
           </Card>
-          <Card transparent style={{borderRadius: 8}}>
+          <Card transparent style={{borderRadius: 8, }}>
             <CardItem
               header
               bordered
@@ -207,29 +208,14 @@ export default class UpcomingEvents extends Component {
                 borderBottomWidth: 1,
               }}>
               <Text
-                style={{fontSize: 20, fontWeight: 'bold', color: '#103662'}}>
+                style={{fontSize: 20, fontWeight: 'bold', color: '#103662', }}>
                 News
               </Text>
               
-              <CheckBox
-                checked={this.state.news === 'gb'}
-                color="#103662"
-                onPress={() => this.setState({news: 'gb'})}
-              />
-              <Text style={{fontSize: 15, marginStart: 15, color: 'back'}}>
-                UK
-              </Text>
-              <CheckBox
-                checked={this.state.news === 'us'}
-                color="#103662"
-                onPress={() => this.setState({news: 'us'})}
-              />
-              <Text style={{fontSize: 15, marginStart: 15, color: 'back'}}>
-                USA
-              </Text>
+              
             </CardItem>
             {items.map(item => (
-              <CardItem>
+              <CardItem style={{marginEnd:30}}>
                 <Text key={item.title} />
                 <Icon active name="logo-googleplus" />
                 <Text>{item.title}</Text>

@@ -39,8 +39,8 @@ function DrawerNavigator() {
       labelStyle: {fontSize: 20},
     }}>
       <Drawer.Screen name="Dashboard" component={Dashboard} />
-      <Drawer.Screen name="New Client" component={NewClient} />
       <Drawer.Screen name="Client List" component={ClientList} />
+      <Drawer.Screen name="New Client" component={NewClient} />
       <Drawer.Screen name="Messages" component={Messages} />
       <Drawer.Screen name="Calendar" component={Calender} />
       <Drawer.Screen name="Product Training" component={ProductTraining} />

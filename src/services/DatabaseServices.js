@@ -82,6 +82,8 @@ export async function updateClientKYC(data) {
         client_knowledge: data.client_knowledge,
         wealth_source: data.wealth_source,
         news: data.news,
+        events: data.events,
+        event_date: data.event_date,
       },
     );
 
